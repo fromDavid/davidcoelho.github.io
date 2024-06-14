@@ -12119,6 +12119,14 @@ img {
   font-weight: 300;
 }
 
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
 @media only screen and (min-width: 300px) and (max-width: 1400px) {
   .container-n-h {
     max-height: 650px !important;
@@ -12145,6 +12153,9 @@ img {
   }
   .photo-box img {
     width: 100%;
+  }
+  .p-1 {
+    font-size: 1.2em !important;
   }
 }
 .row {
