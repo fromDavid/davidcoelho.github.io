@@ -12058,7 +12058,7 @@ img {
 }
 
 .container-n-h2 {
-  height: 600px !important;
+  height: 750px !important;
 }
 
 .photo-box, .photo-box-1 {
@@ -12114,9 +12114,17 @@ img {
   width: 450px;
 }
 
+.p-1 {
+  font-size: 1.5em !important;
+  font-weight: 300;
+}
+
 @media only screen and (min-width: 300px) and (max-width: 1400px) {
   .container-n-h {
     max-height: 650px !important;
+  }
+  .container-n-h2 {
+    max-height: 350px !important;
   }
   .photo-box {
     top: -10vh;
