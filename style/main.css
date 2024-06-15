@@ -11969,7 +11969,9 @@ textarea.form-control-lg {
 html {
   font-family: "Muli", sans-serif;
   font-smoothing: antialiased;
+  font-smooth: auto;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -11985,6 +11987,34 @@ body {
 img {
   max-width: 100%;
   height: auto; /* default */
+}
+
+.container {
+  display: grid;
+}
+
+/*.row{
+    margin: auto;
+    padding: auto;
+}*/
+main {
+  padding: 20px;
+}
+
+.xl-content-divider {
+  margin: 30px 0;
+}
+
+.xl-content {
+  padding: 20px;
+}
+
+.xl-content p {
+  font-size: 1.3em;
+}
+
+.xl-content h1, .xl-content .h1 {
+  margin-bottom: 25px;
 }
 
 .text-background-blur {
@@ -12158,29 +12188,10 @@ hr {
     font-size: 1.2em !important;
   }
 }
-.row {
-  margin: auto;
-  padding: auto;
-}
-
-main {
-  padding: 20px;
-}
-
-.xl-content-divider {
-  margin: 30px 0;
-}
-
-.xl-content {
-  padding: 20px;
-}
-
-.xl-content p {
-  font-size: 1.3em;
-}
-
-.xl-content h1, .xl-content .h1 {
-  margin-bottom: 25px;
+.img-work-defs img {
+  max-width: 100%;
+  height: auto;
+  max-height: 280px;
 }
 
 .line-drawing-wrapper {
