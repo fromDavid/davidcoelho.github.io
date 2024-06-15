@@ -12188,6 +12188,10 @@ hr {
     font-size: 1.2em !important;
   }
 }
+.img-work-defs {
+  padding-bottom: 25px;
+}
+
 .img-work-defs img {
   max-width: 100%;
   height: auto;
