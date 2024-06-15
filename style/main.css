@@ -12192,6 +12192,14 @@ hr {
     font-size: 1.2em !important;
   }
 }
+@media screen and (max-width: 390px) {
+  .vr {
+    display: none;
+  }
+  i {
+    display: none !important;
+  }
+}
 .img-work-defs {
   padding-bottom: 25px;
 }
@@ -12215,7 +12223,7 @@ hr {
 .line-drawing {
   position: absolute;
   left: 0%;
-  top: 100vh;
+  top: 100%;
   right: 0%;
   bottom: 0%;
   z-index: 0;
@@ -12236,10 +12244,10 @@ hr {
 
 #star-svg {
   position: fixed;
-  left: 10%;
+  left: 45%;
   width: 130px;
   height: 100%;
-  margin: -75px 0 0 -75px;
-  transform: scale(3, 5);
+  margin: -15px 0 0 -15px;
+  transform: scale(3.5);
   z-index: -1;
 }

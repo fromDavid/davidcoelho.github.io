@@ -42,3 +42,12 @@ window.addEventListener('scroll', function() {
     const headerContentPosition = 0 + scrollPosition * 0.1;
     headerContent.style.transform = `translateY(${headerContentPosition}px)`;
   });
+
+  const [red, green, blue] = [244, 244, 244]
+  const section1 = document.querySelector('.section-color')
+  
+  window.addEventListener('scroll', () => {
+    const y = 1 + (window.scrollY || window.pageYOffset) / 150
+    const [r, g, b] = [red/y, green/y, blue/y].map(Math.round)
+    section1.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+  })
