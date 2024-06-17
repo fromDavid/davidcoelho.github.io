@@ -12020,7 +12020,7 @@ main {
 .text-background-blur {
   background-color: #f4f4f4;
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px); /* Efeito blur */
+          backdrop-filter: blur(10px);
   box-shadow: 0 0 20px 40px #f4f4f4;
   opacity: 0.99;
   z-index: 1;
@@ -12032,6 +12032,15 @@ main {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   box-shadow: 0 0 20px 40px #f4f4f4;
+  opacity: 0.99;
+}
+
+.background-color-no-b {
+  background-color: #f4f4f4 !important;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px 0px #f4f4f4;
   opacity: 0.99;
 }
 
@@ -12218,6 +12227,7 @@ hr {
   bottom: 0%;
   overflow: hidden;
   z-index: 0;
+  z-index: -1;
 }
 
 .line-drawing {
@@ -12230,6 +12240,7 @@ hr {
   width: 100%;
   height: 100%;
   color: hsl(165, 31.11%, 17.65%);
+  z-index: -1;
 }
 
 .line-drawing:medium {
@@ -12252,7 +12263,9 @@ hr {
   z-index: -1;
 }
 
-.bg-color-trans {
-  height: 5000px;
+.panel {
+  height: auto;
   z-index: 0;
+  background-color: rgb(16, 133, 179) !important;
+  color: white;
 }
