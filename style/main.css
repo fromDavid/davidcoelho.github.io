@@ -12133,7 +12133,7 @@ main {
 
 .photo-box-2, .photo-box-3 {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   transition: transform 0.3s ease-out;
   display: inline-block;
 }
@@ -12179,7 +12179,7 @@ hr {
     max-height: 650px !important;
   }
   .container-n-h2 {
-    max-height: 350px !important;
+    max-height: 450px !important;
   }
   .photo-box {
     top: -10vh;
@@ -12269,7 +12269,6 @@ hr {
 
 .panel {
   position: relative;
-  height: 100vh;
   background-color: rgb(105, 126, 135) !important;
   transition: transform 0.3s ease-out;
   color: white;
@@ -12280,9 +12279,23 @@ hr {
   text-decoration: none;
   color: white;
   transition: transform 0.5s ease-out;
+  font-size: 1.1em;
+  padding: 10px;
+}
+
+.panel ul {
+  list-style: none;
+}
+
+.panel ul li {
+  padding-bottom: 10px;
 }
 
 .panel a:hover {
   text-decoration: underline;
   color: #d2d2d2;
+}
+
+.panel img {
+  box-shadow: 10px 5x 5px 5px rgba(0, 0, 0, 0);
 }
