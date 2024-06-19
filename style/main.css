@@ -12097,6 +12097,42 @@ main {
   font-weight: 100;
 }
 
+/* -- Modal Begin --*/
+.modal {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+
+.modal-content button {
+  padding: 10px 5px 15px 5px;
+}
+
+.modal-body li a {
+  padding: 10px 5px 5px 10px !important;
+}
+
+.modal-body li a:hover {
+  border-color: #ef8275 !important;
+  color: #ef8275 !important;
+  text-decoration: underline;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 1px;
+  border-style: solid;
+}
+
+.active-styled-1 {
+  font-weight: 700;
+  color: #ef8275 !important;
+  border-color: #ef8275 !important;
+  text-decoration: underline;
+  border-radius: 5px;
+  border: 1px;
+  border-style: solid;
+  border-color: #1b1f25;
+}
+
 .container-n-h {
   max-height: 600px !important;
 }
