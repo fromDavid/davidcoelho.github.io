@@ -12268,7 +12268,6 @@ hr {
 }
 
 .panel {
-  position: relative;
   background-color: rgb(105, 126, 135) !important;
   opacity: 0.99;
   -webkit-backdrop-filter: blur(10px);
@@ -12312,4 +12311,10 @@ hr {
   background-size: cover;
   background-position: center;
   transition: transform 0.3s ease-out;
+}
+
+.links {
+  max-height: 170px !important;
+  height: 170px;
+  z-index: 2;
 }
