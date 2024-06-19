@@ -12264,8 +12264,21 @@ hr {
 }
 
 .panel {
-  height: auto;
-  z-index: 0;
-  background-color: rgb(16, 133, 179) !important;
+  position: relative;
+  height: 100vh;
+  background-color: rgb(105, 126, 135) !important;
+  transition: transform 0.3s ease-out;
   color: white;
+  z-index: 1;
+}
+
+.panel a {
+  text-decoration: none;
+  color: white;
+  transition: transform 0.5s ease-out;
+}
+
+.panel a:hover {
+  text-decoration: underline;
+  color: #d2d2d2;
 }
