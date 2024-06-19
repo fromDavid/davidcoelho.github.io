@@ -108,7 +108,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/images/bg-1.jpg');
+    background-image: url('/images/bg-3.jpg');
     background-size: cover;
     background-position: center;
     transition: transform 0.3s ease-out;
@@ -186,7 +186,7 @@ main {
 }
 
 .photo-box-2 img {
-    width: 350px;
+    width: 550px;
 }
 
 .photo-box-3{
@@ -323,6 +323,8 @@ hr {
 .panel{
     position: relative;
     background-color: rgb(105, 126, 135)!important;
+    opacity: 0.99;
+    backdrop-filter: blur(10px);
     transition: transform 0.3s ease-out;
     color: white;
     z-index: 1;
@@ -351,4 +353,16 @@ hr {
 
 .panel img{
     box-shadow: 10px 5x 5px 5px #0000;
+}
+
+.dev{
+    font-size: 1.1em;
+}
+
+.myf{
+
+    background-image: url('/images/bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-out;
 }
