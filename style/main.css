@@ -12206,11 +12206,6 @@ hr {
     font-size: 1.2em !important;
   }
 }
-@media screen and (max-width: 390px) {
-  .vr {
-    display: none;
-  }
-}
 .img-work-defs {
   padding-bottom: 25px;
 }
