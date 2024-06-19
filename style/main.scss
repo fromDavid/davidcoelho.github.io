@@ -9,7 +9,7 @@
 // Then add additional custom code here
 
 html {
-	font-family: 'Muli', sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-smoothing: antialiased;
     font-smooth: auto;
 	text-rendering: optimizeLegibility;
@@ -24,6 +24,10 @@ body {
     font-family: "Roboto", sans-serif;
     background-color: rgb(244, 244, 244);
     transition: background-color 0.5s;
+}
+
+a{
+    font-family: "Roboto", sans-serif;
 }
 
 img {
