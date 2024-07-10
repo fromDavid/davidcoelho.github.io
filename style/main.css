@@ -12045,7 +12045,7 @@ main {
   z-index: 1;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px 0px #f4f4f4;
+  box-shadow: 0px -20px 20px 10px #f4f4f4;
   opacity: 0.99;
 }
 
