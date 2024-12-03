@@ -12089,12 +12089,12 @@ main {
 
 .header-content h2, .header-content .h2 {
   font-size: 2.5em;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .header-content p {
   font-size: 1.5em;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 /* -- Modal Begin --*/
