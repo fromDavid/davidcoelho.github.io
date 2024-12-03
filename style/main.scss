@@ -209,7 +209,7 @@ main {
 
 .photo-box-2, .photo-box-3{
     position: relative;
-    z-index: 2;
+    z-index: 0;
     transition: transform 0.3s ease-out;
     display: inline-block;
 }
