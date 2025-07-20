@@ -12137,6 +12137,15 @@ main {
   opacity: 0.8;
 }
 
+.navbar-style {
+  position: absolute;
+  width: 92%;
+}
+
+.navbar-style a {
+  color: white !important;
+}
+
 .container-n-h {
   max-height: 600px !important;
 }
