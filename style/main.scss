@@ -152,11 +152,13 @@ main {
   font: normal 40px/50px Montserrat, sans-serif;
   color: #999;
 }
+
 .Iam p {
   height: 10px;
   float: left;
   margin-right: 0.3em;
 }
+
 .Iam b {
   float: left;
   overflow: hidden;
@@ -164,6 +166,7 @@ main {
   height: 50px;
   top: 5px;
 }
+
 .Iam .innerIam {
   display: inline-block;
   color: #e74c3c;
@@ -171,7 +174,6 @@ main {
   white-space: nowrap;
   top: 0;
   left: 0;
-
 
 /*animation*/
 -webkit-animation:move 5s;
@@ -227,6 +229,13 @@ main {
     40% { top: -100px; }
     60% { top: -150px; }
     80% { top: -200px; }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1400px){
+    .Iam {
+        padding: 2em 5em;
+        font: normal 20px/30px Montserrat, sans-serif;
+    }
 }
 
 /* -- Modal Begin --*/
