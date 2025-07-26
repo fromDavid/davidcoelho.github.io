@@ -141,6 +141,10 @@ main {
     font-weight: 300;
 }
 
+.pages{
+    height: 70vh!important;
+}
+
 /* -- Im Text Effect -- */
 
 .Iam {
@@ -226,6 +230,7 @@ main {
 }
 
 /* -- Modal Begin --*/
+
 .modal{
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(1px);
