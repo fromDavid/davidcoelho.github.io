@@ -31,7 +31,7 @@ a{
 }
 
 br{
-    margin-top: 20px;
+    margin-bottom: 10px!important;
 }
 
 .container{
@@ -465,10 +465,9 @@ hr {
     top: 100%;
     right: 0%;
     bottom: 0%;
-    z-index: 0;
     width: 100%;
     height: 100%;
-    color: hsla(165, 31.11%, 17.65%, 1.00);
+    color: hsla(165, 31.11%, 17.65%, 0.80);
     z-index: -1;
 }
   
@@ -491,6 +490,8 @@ hr {
     transform: scale(3.5);
     z-index: -1;
 }
+
+// Footer Config
 
 .panel{
     background-color: rgb(105, 126, 135)!important;
