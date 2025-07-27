@@ -10,7 +10,6 @@
 // Then add additional custom code here
 
 html {
-
 	font-family: "Roboto", sans-serif;
 	font-smoothing: antialiased;
     font-smooth: auto;
@@ -488,23 +487,25 @@ hr {
     height: 100%;
     margin: -15px 0 0 -15px;
     transform: scale(3.5);
-    z-index: -1;
+    z-index: -1;    
 }
 
 // Footer Config
 
 .panel{
-    background-color: rgb(105, 126, 135)!important;
+    background-color: rgb(244, 244, 244)!important;
     opacity: 0.99;
     backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px 40px #f4f4f4;
     transition: transform 0.3s ease-out;
-    color: white;
+    color: rgb(81, 81, 81);
     z-index: 1;
+    
 }
 
 .panel a{
     text-decoration: none;
-    color: white;
+    color: rgb(81, 81, 81);
     transition: transform 0.5s ease-out;
     font-size: 1.1em;
     padding: 10px;
@@ -520,7 +521,7 @@ hr {
 
 .panel a:hover{
     text-decoration: underline;
-    color: #d2d2d2;
+    color: rgb(47, 47, 47);
 }
 
 .panel img{
