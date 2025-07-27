@@ -11995,10 +11995,6 @@ br {
   display: grid;
 }
 
-/*.row{
-    margin: auto;
-    padding: auto;
-}*/
 main {
   padding: 20px;
 }
@@ -12076,7 +12072,7 @@ main {
 
 .header-content {
   z-index: 1;
-  color: #1b1b1b;
+  color: #000000;
 }
 
 .header-content h1, .header-content .h1 {
@@ -12105,82 +12101,6 @@ main {
 @media only screen and (min-width: 300px) and (max-width: 1400px) {
   .header-content h1, .header-content .h1 {
     font-size: 3em;
-  }
-}
-/* -- Im Text Effect -- */
-.Iam {
-  padding: 2em 5em;
-  font: normal 40px/50px Montserrat, sans-serif;
-  color: #999;
-}
-
-.Iam p {
-  height: 10px;
-  float: left;
-  margin-right: 0.3em;
-}
-
-.Iam b {
-  float: left;
-  overflow: hidden;
-  position: relative;
-  height: 50px;
-  top: 5px;
-}
-
-.Iam .innerIam {
-  display: inline-block;
-  color: #e74c3c;
-  position: relative;
-  white-space: nowrap;
-  top: 0;
-  left: 0;
-  /*animation*/
-  animation: move 5s;
-  /*animation-iteration-count*/
-  animation-iteration-count: infinite;
-  /*animation-delay*/
-  animation-delay: 1s;
-}
-
-@keyframes move {
-  0% {
-    top: 0px;
-  }
-  20% {
-    top: -50px;
-  }
-  40% {
-    top: -100px;
-  }
-  60% {
-    top: -150px;
-  }
-  80% {
-    top: -200px;
-  }
-}
-@keyframes move {
-  0% {
-    top: 0px;
-  }
-  20% {
-    top: -50px;
-  }
-  40% {
-    top: -100px;
-  }
-  60% {
-    top: -150px;
-  }
-  80% {
-    top: -200px;
-  }
-}
-@media only screen and (min-width: 300px) and (max-width: 1400px) {
-  .Iam {
-    padding: 2em 5em;
-    font: normal 20px/30px Montserrat, sans-serif;
   }
 }
 /* -- Modal Begin --*/
