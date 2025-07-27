@@ -12223,13 +12223,13 @@ main {
   opacity: 0.8;
 }
 
-.navbar-style {
-  position: absolute;
-  width: 92%;
+.navbar-text-decoration {
+  font-weight: 300;
+  font-size: 1.2em;
 }
 
 .navbar-style a {
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .text-decor {
@@ -12239,6 +12239,15 @@ main {
   font-size: 2em;
 }
 
+.navbar-burguer {
+  border: none;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1400px) {
+  .navbar-text-decoration {
+    font-size: 1.8em;
+  }
+}
 .container-n-h {
   max-height: 600px !important;
 }
