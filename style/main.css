@@ -11988,9 +11988,8 @@ a {
   font-family: "Roboto", sans-serif;
 }
 
-img {
-  max-width: 100%;
-  height: auto; /* default */
+br {
+  margin-top: 20px;
 }
 
 .container {
@@ -12101,9 +12100,14 @@ main {
 }
 
 .pages {
-  height: 70vh !important;
+  height: 80vh !important;
 }
 
+@media only screen and (min-width: 300px) and (max-width: 1400px) {
+  .header-content h1, .header-content .h1 {
+    font-size: 3em;
+  }
+}
 /* -- Im Text Effect -- */
 .Iam {
   padding: 2em 5em;
