@@ -21,7 +21,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
-    background-color: rgb(244, 244, 244);
+    background-color: #f4efea;
     transition: background-color 0.5s;
 }
 
@@ -215,7 +215,7 @@ main {
 //resume.html
 
 .resume{
-    background-color: #ffefdf!important;
+    background-color: #f4efea!important;
 }
 
 .resume-content{
@@ -263,15 +263,20 @@ main {
   background: #507c6b;
 }
 
+.timeline.red::before {
+  background: #7c5050;
+}
+
 .timeline ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+}
+
+.timeline li ul{
+    margin-top: 10px;
 }
 
 .timeline li {
   margin-bottom: 20px;
-  
 }
 
 @media only screen and (min-width: 300px) and (max-width: 800px){
