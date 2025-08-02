@@ -212,6 +212,93 @@ main {
     }
 }
 
+//resume.html
+
+.resume{
+    background-color: #ffefdf!important;
+}
+
+.resume-content{
+    margin-top: 10px;
+    max-width: 1140px;
+}
+
+.title {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    text-align: end;
+}
+
+.ti{
+    text-transform: lowercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid #aaa;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.timeline.orange::before {
+  background: #e49319;
+}
+
+.timeline.green::before {
+  background: #507c6b;
+}
+
+.timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline li {
+  margin-bottom: 20px;
+  
+}
+
+@media only screen and (min-width: 300px) and (max-width: 800px){
+    .resume-content{
+        text-align: center!important;
+    }
+
+    .title{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .timeline{
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .timeline::before {
+        content: "";
+        left: 50px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+}
+
 //definitions photo-box
 
 .container-n-h{
