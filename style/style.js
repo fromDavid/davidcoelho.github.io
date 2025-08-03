@@ -45,3 +45,4 @@ window.addEventListener('scroll', function() {
     const headerContentPosition = 0 + scrollPosition * 0.1;
     headerContent.style.transform = `translateY(${headerContentPosition}px)`;
   });
+
