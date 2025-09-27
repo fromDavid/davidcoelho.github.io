@@ -54,18 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  const currencyFormatter = new Intl.NumberFormat('pt-PT', {
+  const hasEconomicsSummary = document.getElementById('summary-v') !== null;
+  const locale = hasEconomicsSummary ? 'en-US' : 'pt-PT';
+
+  const currencyFormatter = new Intl.NumberFormat(locale, {
     style: 'currency',
     currency: 'EUR',
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   });
 
-  const formatPercentage = (value) =>
-    value.toLocaleString('pt-PT', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
+  const percentageFormatter = new Intl.NumberFormat(locale, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
 
   const applyTrendClass = (element, value) => {
     element.classList.remove('text-success', 'text-danger');
@@ -90,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!element) {
       return;
     }
-    element.textContent = `${formatPercentage(value)}%`;
+    element.textContent = `${percentageFormatter.format(value)}%`;
     applyTrendClass(element, value);
   };
 
@@ -104,7 +106,51 @@ document.addEventListener('DOMContentLoaded', () => {
     return Number.isFinite(numeric) ? numeric : 0;
   };
 
-  const calculate = () => {
+  const calculateEconomics = () => {
+    const revenue = getValue('operating-revenue');
+    const variableCosts = getValue('variable-costs');
+    const fixedCosts = getValue('fixed-costs');
+    const financialCharges = getValue('financial-charges');
+    const taxRate = Math.max(0, getValue('tax-rate')) / 100;
+
+    const grossMargin = revenue - variableCosts;
+    const operatingResult = grossMargin - fixedCosts;
+    const resultBeforeTax = operatingResult - financialCharges;
+    const taxes = Math.max(0, resultBeforeTax) * taxRate;
+    const netResult = resultBeforeTax - taxes;
+    const profitMargin = revenue !== 0 ? (netResult / revenue) * 100 : 0;
+    const contributionMarginRatio = revenue !== 0 ? (revenue - variableCosts) / revenue : 0;
+    const breakEvenSales = contributionMarginRatio > 0 ? (fixedCosts + financialCharges) / contributionMarginRatio : 0;
+    const marginOfSafety = revenue > 0 ? ((revenue - breakEvenSales) / revenue) * 100 : 0;
+
+    updateCurrency('summary-v', revenue);
+    updateCurrency('summary-cv', -variableCosts);
+    updateCurrency('summary-mb', grossMargin);
+    updateCurrency('summary-cf', -fixedCosts);
+    updateCurrency('summary-ro', operatingResult);
+    updateCurrency('summary-ef', -financialCharges);
+    updateCurrency('summary-rlai', resultBeforeTax);
+    updateCurrency('summary-rl', netResult);
+    updatePercentage('summary-profit-margin', profitMargin);
+    updatePercentage('summary-margin-safety', marginOfSafety);
+    updateCurrency('summary-break-even', breakEvenSales);
+  };
+
+  const resetEconomics = () => {
+    updateCurrency('summary-v', 0);
+    updateCurrency('summary-cv', 0);
+    updateCurrency('summary-mb', 0);
+    updateCurrency('summary-cf', 0);
+    updateCurrency('summary-ro', 0);
+    updateCurrency('summary-ef', 0);
+    updateCurrency('summary-rlai', 0);
+    updateCurrency('summary-rl', 0);
+    updatePercentage('summary-profit-margin', 0);
+    updatePercentage('summary-margin-safety', 0);
+    updateCurrency('summary-break-even', 0);
+  };
+
+  const calculateDefault = () => {
     const revenue = getValue('revenue');
     const costOfGoods = getValue('cost-of-goods');
     const operatingExpenses = getValue('operating-expenses');
@@ -128,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updatePercentage('net-margin', netMargin);
   };
 
-  const resetResults = () => {
+  const resetDefault = () => {
     updateCurrency('gross-margin', 0);
     updateCurrency('operating-income', 0);
     updateCurrency('income-before-tax', 0);
@@ -136,6 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCurrency('net-income', 0);
     updatePercentage('net-margin', 0);
   };
+
+  const calculate = hasEconomicsSummary ? calculateEconomics : calculateDefault;
+  const resetResults = hasEconomicsSummary ? resetEconomics : resetDefault;
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -148,5 +197,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   resetResults();
 });
-
-
