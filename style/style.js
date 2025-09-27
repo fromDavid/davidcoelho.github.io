@@ -46,3 +46,107 @@ window.addEventListener('scroll', function() {
     headerContent.style.transform = `translateY(${headerContentPosition}px)`;
   });
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('income-statement-form');
+  if (!form) {
+    return;
+  }
+
+  const currencyFormatter = new Intl.NumberFormat('pt-PT', {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+  const formatPercentage = (value) =>
+    value.toLocaleString('pt-PT', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+  const applyTrendClass = (element, value) => {
+    element.classList.remove('text-success', 'text-danger');
+    if (value > 0.0001) {
+      element.classList.add('text-success');
+    } else if (value < -0.0001) {
+      element.classList.add('text-danger');
+    }
+  };
+
+  const updateCurrency = (id, value) => {
+    const element = document.getElementById(id);
+    if (!element) {
+      return;
+    }
+    element.textContent = currencyFormatter.format(value);
+    applyTrendClass(element, value);
+  };
+
+  const updatePercentage = (id, value) => {
+    const element = document.getElementById(id);
+    if (!element) {
+      return;
+    }
+    element.textContent = `${formatPercentage(value)}%`;
+    applyTrendClass(element, value);
+  };
+
+  const getValue = (id) => {
+    const input = document.getElementById(id);
+    if (!input) {
+      return 0;
+    }
+    const normalised = input.value.replace(',', '.');
+    const numeric = Number.parseFloat(normalised);
+    return Number.isFinite(numeric) ? numeric : 0;
+  };
+
+  const calculate = () => {
+    const revenue = getValue('revenue');
+    const costOfGoods = getValue('cost-of-goods');
+    const operatingExpenses = getValue('operating-expenses');
+    const otherIncome = getValue('other-income');
+    const otherExpenses = getValue('other-expenses');
+    const taxRate = Math.max(0, getValue('tax-rate')) / 100;
+
+    const grossMargin = revenue - costOfGoods;
+    const operatingIncome = grossMargin - operatingExpenses;
+    const incomeBeforeTax = operatingIncome + otherIncome - otherExpenses;
+    const taxableBase = Math.max(0, incomeBeforeTax);
+    const taxes = taxableBase * taxRate;
+    const netIncome = incomeBeforeTax - taxes;
+    const netMargin = revenue !== 0 ? (netIncome / revenue) * 100 : 0;
+
+    updateCurrency('gross-margin', grossMargin);
+    updateCurrency('operating-income', operatingIncome);
+    updateCurrency('income-before-tax', incomeBeforeTax);
+    updateCurrency('taxes', taxes);
+    updateCurrency('net-income', netIncome);
+    updatePercentage('net-margin', netMargin);
+  };
+
+  const resetResults = () => {
+    updateCurrency('gross-margin', 0);
+    updateCurrency('operating-income', 0);
+    updateCurrency('income-before-tax', 0);
+    updateCurrency('taxes', 0);
+    updateCurrency('net-income', 0);
+    updatePercentage('net-margin', 0);
+  };
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    calculate();
+  });
+
+  form.addEventListener('reset', () => {
+    window.setTimeout(resetResults, 0);
+  });
+
+  resetResults();
+});
+
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -112,6 +112,79 @@
       </section>
     </section>
     
+    <section class="container px-4 mt-5">
+      <section class="row justify-content-center">
+        <section class="col-12 col-lg-10 text-background-blur simulator-card p-4 p-lg-5">
+          <h1 class="display-3 mb-3 text-center text-lg-start">Simulador de Demonstração de Resultados</h1>
+          <p class="lead mb-4">Introduza os principais valores para estimar rapidamente o desempenho económico.</p>
+          <form id="income-statement-form" class="row g-4">
+            <div class="col-md-6">
+              <label for="revenue" class="form-label">Receitas</label>
+              <input type="number" class="form-control" id="revenue" placeholder="0" step="0.01">
+            </div>
+            <div class="col-md-6">
+              <label for="cost-of-goods" class="form-label">Custo dos Bens Vendidos</label>
+              <input type="number" class="form-control" id="cost-of-goods" placeholder="0" step="0.01">
+            </div>
+            <div class="col-md-6">
+              <label for="operating-expenses" class="form-label">Despesas Operacionais</label>
+              <input type="number" class="form-control" id="operating-expenses" placeholder="0" step="0.01">
+            </div>
+            <div class="col-md-6">
+              <label for="other-income" class="form-label">Outros Rendimentos</label>
+              <input type="number" class="form-control" id="other-income" placeholder="0" step="0.01">
+            </div>
+            <div class="col-md-6">
+              <label for="other-expenses" class="form-label">Outros Gastos</label>
+              <input type="number" class="form-control" id="other-expenses" placeholder="0" step="0.01">
+            </div>
+            <div class="col-md-6">
+              <label for="tax-rate" class="form-label">Taxa de Imposto (%)</label>
+              <input type="number" class="form-control" id="tax-rate" placeholder="21" step="0.01" min="0">
+            </div>
+            <div class="col-12 d-flex flex-wrap gap-3 mt-2">
+              <button type="submit" class="btn btn-primary" id="calculate-income-statement">Calcular</button>
+              <button type="reset" class="btn btn-outline-secondary" id="reset-income-statement">Limpar</button>
+            </div>
+          </form>
+          <section id="income-results" class="mt-4" aria-live="polite">
+            <h2 class="h4 mb-3">Resumo</h2>
+            <div class="table-responsive">
+              <table class="table table-sm align-middle mb-0">
+                <tbody>
+                  <tr>
+                    <th scope="row">Margem Bruta</th>
+                    <td id="gross-margin">€0,00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Resultado Operacional</th>
+                    <td id="operating-income">€0,00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Resultado Antes de Impostos</th>
+                    <td id="income-before-tax">€0,00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Impostos</th>
+                    <td id="taxes">€0,00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Resultado Lí­quido</th>
+                    <td id="net-income">€0,00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Margem Lí­quida</th>
+                    <td id="net-margin">0%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="small text-body-secondary mt-3">Os valores apresentados têm carácter informativo e não substituem uma análise financeira completa.</p>
+          </section>
+        </section>
+      </section>
+    </section>
+
     <section class="container px-4 mt-5 p-5">
       <section class="row justify-content-center">
         <section class="col-10 col-sm-12 text-background-blur">

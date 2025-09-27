@@ -14262,4 +14262,17 @@ hr {
 .dev {
   font-size: 1.1em;
 }
+
+.simulator-card table th {
+  font-weight: 600;
+}
+
+.simulator-card table td {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.simulator-card .btn {
+  min-width: 140px;
+}
 /*# sourceMappingURL=main.css.map */
