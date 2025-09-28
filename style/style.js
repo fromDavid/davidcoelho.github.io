@@ -1,14 +1,14 @@
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.zoom-header');
-    const photoBox = document.querySelector('.photo-box');
-    const photoBox1 = document.querySelector('.photo-box-2');
-    const photoBox2 = document.querySelector('.photo-box-3');
+    //const photoBox = document.querySelector('.photo-box');
+    //const photoBox1 = document.querySelector('.photo-box-2');
+    //const photoBox2 = document.querySelector('.photo-box-3');
     const headerContent = document.querySelector('.header-content');
     const panel = document.querySelector('.panel');
     const line = document.querySelector('.scroll-line');
     const scrollPosition = window.scrollY;
     
-    //Photo Box 1
+   /*Photo Box 1
     let photoBoxPosition = 0 + scrollPosition * 0.01;
     
     const maxTranslate = 18; // Maximum translation in vh
@@ -18,7 +18,7 @@ window.addEventListener('scroll', function() {
   
     photoBox.style.transform = `translate(0, ${photoBoxPosition}vh)`;
     
-    //Photo Box 2
+    Photo Box 2
     let photoBoxPosition1 = 0 + scrollPosition * 0.01;
     
     const maxTranslate1 = 25; // Maximum translation in vh
@@ -36,7 +36,7 @@ window.addEventListener('scroll', function() {
           photoBoxPosition2 = maxTranslate2;
       }
   
-    photoBox2.style.transform = `translate(0, ${photoBoxPosition2}vh)`;
+    photoBox2.style.transform = `translate(0, ${photoBoxPosition2}vh)`;*/
   
     // Efeito Zoom no background header
     header.style.setProperty('--scale-value', 1 + scrollPosition * 0.0004);

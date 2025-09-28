@@ -14057,65 +14057,6 @@ h3 span, .h3 span {
   height: 750px !important;
 }
 
-.photo-box, .photo-box-1 {
-  position: relative;
-  z-index: 1;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  display: inline-block;
-}
-
-.photo-box {
-  top: -10vh;
-  text-align: right;
-  padding-right: 5%;
-}
-
-.photo-box-1 {
-  top: -25vh;
-  text-align: left;
-  padding-left: 5%;
-}
-
-.photo-box img {
-  width: 300px;
-}
-
-.photo-box-1 img {
-  width: 450px;
-}
-
-.photo-box-2, .photo-box-3 {
-  position: relative;
-  z-index: 0;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  display: inline-block;
-}
-
-.photo-box-2 {
-  text-align: right;
-  padding-right: 5%;
-}
-
-.photo-box-2 img {
-  width: 550px;
-}
-
-.photo-box-3 {
-  text-align: left;
-  top: 20vh;
-  padding-left: 5%;
-}
-
-.photo-box-3 img {
-  width: 450px;
-}
-
 .p-1 {
   font-size: 1.5em !important;
   font-weight: 300;
