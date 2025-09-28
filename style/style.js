@@ -69,6 +69,60 @@ document.addEventListener('DOMContentLoaded', () => {
     maximumFractionDigits: 2
   });
 
+  const chartCanvas = document.getElementById('income-chart');
+  let incomeChart;
+
+  const updateChart = (points) => {
+    if (!chartCanvas || typeof window.Chart === 'undefined') {
+      return;
+    }
+    const labels = points.map((point) => point.label);
+    const values = points.map((point) => Number.isFinite(point.value) ? point.value : 0);
+    const backgroundColor = values.map((value) => value >= 0 ? 'rgba(25, 135, 84, 0.55)' : 'rgba(220, 53, 69, 0.55)');
+    const borderColor = values.map((value) => value >= 0 ? 'rgba(25, 135, 84, 1)' : 'rgba(220, 53, 69, 1)');
+
+    if (!incomeChart) {
+      incomeChart = new window.Chart(chartCanvas, {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Value (EUR)',
+            data: values,
+            backgroundColor,
+            borderColor,
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (context) => `${context.label}: ${currencyFormatter.format(context.raw ?? 0)}`
+              }
+            }
+          },
+          scales: {
+            y: {
+              ticks: {
+                callback: (value) => currencyFormatter.format(value)
+              }
+            }
+          }
+        }
+      });
+      return;
+    }
+
+    incomeChart.data.labels = labels;
+    incomeChart.data.datasets[0].data = values;
+    incomeChart.data.datasets[0].backgroundColor = backgroundColor;
+    incomeChart.data.datasets[0].borderColor = borderColor;
+    incomeChart.update();
+  };
   const applyTrendClass = (element, value) => {
     element.classList.remove('text-success', 'text-danger');
     if (value > 0.0001) {
@@ -134,6 +188,15 @@ document.addEventListener('DOMContentLoaded', () => {
     updatePercentage('summary-profit-margin', profitMargin);
     updatePercentage('summary-margin-safety', marginOfSafety);
     updateCurrency('summary-break-even', breakEvenSales);
+
+    updateChart([
+      { label: 'Operating Revenue', value: revenue },
+      { label: 'Variable Costs', value: -variableCosts },
+      { label: 'Fixed Costs', value: -fixedCosts },
+      { label: 'Financial Charges', value: -financialCharges },
+      { label: 'Net Result', value: netResult },
+      { label: 'Break-even Sales', value: breakEvenSales }
+    ]);
   };
 
   const resetEconomics = () => {
@@ -148,6 +211,15 @@ document.addEventListener('DOMContentLoaded', () => {
     updatePercentage('summary-profit-margin', 0);
     updatePercentage('summary-margin-safety', 0);
     updateCurrency('summary-break-even', 0);
+
+    updateChart([
+      { label: 'Operating Revenue', value: 0 },
+      { label: 'Variable Costs', value: 0 },
+      { label: 'Fixed Costs', value: 0 },
+      { label: 'Financial Charges', value: 0 },
+      { label: 'Net Result', value: 0 },
+      { label: 'Break-even Sales', value: 0 }
+    ]);
   };
 
   const calculateDefault = () => {
@@ -197,3 +269,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   resetResults();
 });
+
