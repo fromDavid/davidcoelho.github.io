@@ -584,7 +584,6 @@ const content = {
     { label: "Análise de Dados", type: "accent", tags: ["Python", "R", "Excel (avançado)", "SQL"] },
     { label: "Visualização & BI", type: "accent", tags: ["Power BI", "Tabelas Dinâmicas", "Power Query", "R Shiny", "Tableau"] },
     { label: "Sistemas ERP", type: "normal", tags: ["Microsoft Navision", "Centralgest", "Primavera RH"] },
-    { label: "Em Desenvolvimento", type: "dev", tags: ["Git", "GitHub"] },
     { label: "Soft Skills", type: "normal", tags: ["Liderança de Equipas", "Inteligência Emocional", "Comunicação", "Resolução de Problemas", "Adaptabilidade", "Resiliência"] }],
 
     experience: [
@@ -622,8 +621,8 @@ const content = {
       company: "Doce Viver, Lda · Grupo ORPEA",
       period: "Out 2017 – Set 2019",
       bullets: [
-      "Apoio ao controlo operacional e compliance com diretrizes do Grupo.",
-      "Gestão de manutenção preventiva, controlo de fornecedores e disponibilidade operacional."]
+      "Apoio ao controlo operacional e garantia de compliance com as diretrizes do Grupo e requisitos regulamentares (auditorias, SST, HACCP).",
+      "Gestão de manutenção preventiva e corretiva de equipamentos, com controlo de fornecedores e disponibilidade da operação."]
 
     },
     {
@@ -631,7 +630,7 @@ const content = {
       company: "Doce Viver, Lda",
       period: "Jul – Out 2017",
       bullets: [
-      "Emissão de faturação (Faturas, NC, Recibos, SAF-T) em Centralgest e gestão de fornecedores."]
+      "Emissão de faturação (Faturas, NC, Recibos, SAF-T) em Centralgest; encomendas a fornecedores e atualização de dados de clientes."]
 
     }],
 
@@ -640,7 +639,7 @@ const content = {
       degree: "Mestrado em Economia — Financial Track",
       school: "Faculdade de Economia, Universidade de Coimbra",
       period: "2025 – presente",
-      details: "Conclusão prevista: 2027 · Áreas nucleares: Finanças Empresariais · Controlo de Gestão · Ciências dos Dados · Inteligência Empresarial"
+      details: "Conclusão prevista: 2027 · Nível 7 QEQ · Áreas nucleares: Finanças Empresariais · Controlo de Gestão · Ciências dos Dados · Inteligência Empresarial"
     },
     {
       degree: "Licenciatura em Ciências da Comunicação Social — Multimédia",
@@ -655,8 +654,7 @@ const content = {
 
     langs: [
     { lang: "Português", comp: "Nativo", oral: "Nativo", written: "Nativo", native: true },
-    { lang: "Inglês", comp: "B2", oral: "B2", written: "B2", native: false },
-    { lang: "Espanhol", comp: "A2", oral: "A1", written: "A1", native: false }],
+    { lang: "Inglês", comp: "B2", oral: "B2", written: "B2", native: false }],
 
     langHeaders: ["Língua", "Compreensão", "Expressão oral", "Escrita"],
     contactTitle: "Vamos falar",
@@ -682,7 +680,6 @@ const content = {
     { label: "Data Analysis", type: "accent", tags: ["Python", "R", "Excel (advanced)", "SQL"] },
     { label: "Visualisation & BI", type: "accent", tags: ["Power BI", "Pivot Tables", "Power Query", "R Shiny", "Tableau"] },
     { label: "ERP Systems", type: "normal", tags: ["Microsoft Navision", "Centralgest", "Primavera RH"] },
-    { label: "In Development", type: "dev", tags: ["Git", "GitHub"] },
     { label: "Soft Skills", type: "normal", tags: ["Team Leadership", "Emotional Intelligence", "Communication", "Problem Solving", "Adaptability", "Resilience"] }],
 
     experience: [
@@ -693,7 +690,7 @@ const content = {
       bullets: []
     },
     {
-      role: "Operational Manager",
+      role: "Operational Management",
       company: "Termas de Luso · Sociedade Central de Cervejas",
       period: "Aug 2022 – Dec 2023",
       bullets: [
@@ -716,12 +713,12 @@ const content = {
 
     },
     {
-      role: "Sub-Technical Director",
+      role: "Deputy Technical Director",
       company: "Doce Viver, Lda · Grupo ORPEA",
       period: "Oct 2017 – Sep 2019",
       bullets: [
-      "Support for operational control and Group compliance.",
-      "Preventive maintenance management, supplier oversight and operational continuity."]
+      "Supported operational control and compliance assurance with Group guidelines and regulatory requirements (audits, SST, HACCP).",
+      "Preventive and corrective equipment maintenance management, with supplier control and operational availability."]
 
     },
     {
@@ -729,7 +726,7 @@ const content = {
       company: "Doce Viver, Lda",
       period: "Jul – Oct 2017",
       bullets: [
-      "Invoicing (Invoices, Credit Notes, Receipts, SAF-T) in Centralgest and supplier management."]
+      "Issuance of invoicing (Invoices, Credit Notes, Receipts, SAF-T) in Centralgest; supplier orders and client data updates."]
 
     }],
 
@@ -738,7 +735,7 @@ const content = {
       degree: "MSc Economics — Financial Track",
       school: "Faculty of Economics, University of Coimbra",
       period: "2025 – present",
-      details: "Expected completion: 2027 · Core areas: Corporate Finance · Management Control · Data Science · Business Intelligence"
+      details: "Expected completion: 2027 · EQF Level 7 · Core areas: Corporate Finance · Management Control · Data Science · Business Intelligence"
     },
     {
       degree: "BSc Communication Sciences — Multimedia",
@@ -753,8 +750,7 @@ const content = {
 
     langs: [
     { lang: "Portuguese", comp: "Native", oral: "Native", written: "Native", native: true },
-    { lang: "English", comp: "B2", oral: "B2", written: "B2", native: false },
-    { lang: "Spanish", comp: "A2", oral: "A1", written: "A1", native: false }],
+    { lang: "English", comp: "B2", oral: "B2", written: "B2", native: false }],
 
     langHeaders: ["Language", "Comprehension", "Speaking", "Writing"],
     contactTitle: "Let's Talk",
@@ -878,7 +874,7 @@ function App() {
           <div className="panel full-width" style={{ animationDelay: '60ms' }}>
             <div className="panel-header">
               <span className="panel-title">{c.sections.skills}</span>
-              <span className="panel-count">05 {lang === 'PT' ? 'categorias' : 'categories'}</span>
+              <span className="panel-count">04 {lang === 'PT' ? 'categorias' : 'categories'}</span>
             </div>
             {c.skillCategories.map((cat, i) =>
             <div className="skill-category" key={i}>
@@ -960,7 +956,7 @@ function App() {
               <div className="panel" style={{ animationDelay: '240ms' }}>
                 <div className="panel-header">
                   <span className="panel-title">{c.sections.langs}</span>
-                  <span className="panel-count">03</span>
+                  <span className="panel-count">02</span>
                 </div>
                 <table className="lang-table">
                   <thead>
