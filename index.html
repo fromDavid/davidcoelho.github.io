@@ -442,6 +442,74 @@
     white-space: nowrap;
   }
 
+  /* PROJECTS */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .proj-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .proj-context {
+    font-size: 11px;
+    font-style: italic;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .proj-context.personal {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 600;
+  }
+  .proj-title {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .proj-image-placeholder {
+    border: 1px dashed var(--border);
+    border-radius: 5px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--bg);
+    text-align: center;
+    padding: 0 12px;
+  }
+  .proj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .proj-desc {
+    font-size: 12.5px;
+    color: #555552;
+    line-height: 1.65;
+  }
+  .proj-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 2px;
+  }
+  .proj-link:hover { text-decoration: underline; }
+
   /* CONTACT MODAL */
   .modal-overlay {
     position: fixed; inset: 0;
@@ -548,6 +616,7 @@
     .sidebar { transform: translateX(-100%); }
     .main { margin-left: 0; padding: 20px; }
     .dashboard-grid { grid-template-columns: 1fr; }
+    .proj-grid { grid-template-columns: 1fr; }
     .hero { grid-template-columns: 1fr; }
     .hero-actions { align-items: flex-start; flex-direction: row; }
   }
@@ -572,10 +641,11 @@ const content = {
     bio: "Mestrando em Economia (Financial Track) na FEUC, com 8 anos de experiência em gestão operacional e controlo. Já trabalhei com budget, capex, controlo mensal de desvios e reporting analítico para a gestão em organizações de média dimensão.",
     downloadBtn: "Descarregar CV",
     contactBtn: "Contactar",
-    nav: ["Perfil", "Competências", "Experiência", "Formação", "Certificações", "Línguas"],
+    nav: ["Perfil", "Competências", "Experiência", "Projetos", "Formação", "Certificações", "Línguas"],
     sections: {
       skills: "Competências",
       experience: "Experiência Profissional",
+      projects: "Projetos",
       education: "Formação Académica",
       certs: "Certificações",
       langs: "Línguas"
@@ -585,6 +655,40 @@ const content = {
     { label: "Visualização & BI", type: "accent", tags: ["Power BI", "Tabelas Dinâmicas", "Power Query", "R Shiny", "Tableau"] },
     { label: "Sistemas ERP", type: "normal", tags: ["Microsoft Navision", "Centralgest", "Primavera RH"] },
     { label: "Soft Skills", type: "normal", tags: ["Liderança de Equipas", "Inteligência Emocional", "Comunicação", "Resolução de Problemas", "Adaptabilidade", "Resiliência"] }],
+
+    projects: [
+    {
+      title: "Sistema de Business Intelligence para Retalho",
+      context: "Inteligência Empresarial · Mestrado em Economia",
+      personal: false,
+      stack: ["Microsoft Access", "Excel", "Modelação de Dados"],
+      desc: "Conceção e implementação de uma base de dados relacional (Microsoft Access) para um supermercado fictício (\"Sem Fiado\"), integrando vendas, produtos, clientes, fornecedores e stock. A partir do modelo de dados, foram definidos KPIs de rotação de stock, ruturas e excesso de inventário, visualizados num dashboard em Microsoft Excel para apoiar decisões de reposição e gestão de stock.",
+      github: null
+    },
+    {
+      title: "Planeamento e Controlo Orçamental de Custos de Produção",
+      context: "Controlo de Gestão · Caso Cervejeira do Mondego",
+      personal: false,
+      stack: ["R", "Typst", "Análise de Variância Orçamental"],
+      desc: "Análise de planeamento, orçamentação e controlo orçamental aplicada a uma empresa fictícia de produção de cerveja. Inclui orçamentação de custos de produção, apuramento de custos reais, análise de desvios (preço/quantidade), indicadores de desempenho e recomendações corretivas, com dashboard de suporte desenvolvido em R.",
+      github: null
+    },
+    {
+      title: "Dashboard de Análise de Risco de Ativos",
+      context: "Ciências dos Dados para Economia e Gestão · Mestrado em Economia",
+      personal: false,
+      stack: ["R", "Shiny", "TTR", "Plotly"],
+      desc: "Aplicação Shiny para análise técnica e de risco de ativos financeiros (ações, cripto, commodities, forex, índices), com scoring técnico automático (RSI, MACD, Bandas de Bollinger, médias móveis), classificação de risco por tipo de ativo, e simulação de Monte Carlo para projeção de preços.",
+      github: null
+    },
+    {
+      title: "Finance Analyser v2",
+      context: "Projeto Pessoal",
+      personal: true,
+      stack: ["Python", "FastAPI", "React/Vite", "Docker"],
+      desc: "Plataforma de análise de investimentos self-hosted (FastAPI + React), com comparação Black-Litterman vs Markowitz validada por walk-forward e CPCV, simulação Monte Carlo, e pré-filtro de saúde financeira antes da otimização de portfólio.",
+      github: "[GITHUB_URL]"
+    }],
 
     experience: [
     {
@@ -668,10 +772,11 @@ const content = {
     bio: "MSc Economics student (Financial Track) at FEUC, with 8 years of experience in operational management and control. I have worked with budget, capex, monthly variance control, and analytical reporting for management in medium-sized organisations.",
     downloadBtn: "Download CV",
     contactBtn: "Get in Touch",
-    nav: ["Profile", "Skills", "Experience", "Education", "Certifications", "Languages"],
+    nav: ["Profile", "Skills", "Experience", "Projects", "Education", "Certifications", "Languages"],
     sections: {
       skills: "Skills",
       experience: "Professional Experience",
+      projects: "Projects",
       education: "Education",
       certs: "Certifications",
       langs: "Languages"
@@ -681,6 +786,40 @@ const content = {
     { label: "Visualisation & BI", type: "accent", tags: ["Power BI", "Pivot Tables", "Power Query", "R Shiny", "Tableau"] },
     { label: "ERP Systems", type: "normal", tags: ["Microsoft Navision", "Centralgest", "Primavera RH"] },
     { label: "Soft Skills", type: "normal", tags: ["Team Leadership", "Emotional Intelligence", "Communication", "Problem Solving", "Adaptability", "Resilience"] }],
+
+    projects: [
+    {
+      title: "Retail Business Intelligence System",
+      context: "Business Intelligence · MSc in Economics",
+      personal: false,
+      stack: ["Microsoft Access", "Excel", "Data Modelling"],
+      desc: "[EN — pending final copy] Design and implementation of a relational database (Microsoft Access) for a fictitious supermarket (\"Sem Fiado\"), integrating sales, products, customers, suppliers and stock. From the data model, KPIs for stock turnover, stockouts and excess inventory were defined, visualised in a Microsoft Excel dashboard to support restocking and inventory decisions.",
+      github: null
+    },
+    {
+      title: "Production Cost Budgeting & Variance Control",
+      context: "Management Control · Cervejeira do Mondego Case Study",
+      personal: false,
+      stack: ["R", "Typst", "Budget Variance Analysis"],
+      desc: "[EN — pending final copy] Planning, budgeting and budgetary control analysis applied to a fictitious beer production company. Includes production cost budgeting, actual cost tracking, price/quantity variance analysis, performance indicators and corrective recommendations, with a supporting dashboard built in R.",
+      github: null
+    },
+    {
+      title: "Asset Risk Analysis Dashboard",
+      context: "Data Science for Economics & Management · MSc in Economics",
+      personal: false,
+      stack: ["R", "Shiny", "TTR", "Plotly"],
+      desc: "[EN — pending final copy] Shiny application for technical and risk analysis of financial assets (stocks, crypto, commodities, forex, indices), with automatic technical scoring (RSI, MACD, Bollinger Bands, moving averages), risk classification by asset type, and Monte Carlo simulation for price projection.",
+      github: null
+    },
+    {
+      title: "Finance Analyser v2",
+      context: "Personal Project",
+      personal: true,
+      stack: ["Python", "FastAPI", "React/Vite", "Docker"],
+      desc: "[EN — pending final copy] Self-hosted investment analysis platform (FastAPI + React), with Black-Litterman vs Markowitz comparison validated via walk-forward and CPCV, Monte Carlo simulation, and a financial health pre-filter ahead of portfolio optimisation.",
+      github: "[GITHUB_URL]"
+    }],
 
     experience: [
     {
@@ -811,7 +950,7 @@ function App() {
     setSubmitted(true);
   };
 
-  const sectionIds = ['profile', 'skills', 'experience', 'education', 'certs', 'langs'];
+  const sectionIds = ['profile', 'skills', 'experience', 'projects', 'education', 'certs', 'langs'];
 
   return (
     <>
@@ -977,6 +1116,34 @@ function App() {
             </section>
           </div>
         </div>
+
+        {/* PROJECTS — full width */}
+        <section id="projects">
+          <div className="panel full-width" style={{ animationDelay: '280ms' }}>
+            <div className="panel-header">
+              <span className="panel-title">{c.sections.projects}</span>
+              <span className="panel-count">04 {lang === 'PT' ? 'projetos' : 'projects'}</span>
+            </div>
+            <div className="proj-grid">
+              {c.projects.map((p, i) =>
+              <div className="proj-card" key={i}>
+                  <div className={`proj-context ${p.personal ? 'personal' : ''}`}>{p.context}</div>
+                  <div className="proj-title">{p.title}</div>
+                  <div className="proj-image-placeholder">{lang === 'PT' ? 'Screenshot / gráfico em breve' : 'Screenshot / chart coming soon'}</div>
+                  <div className="proj-tags">
+                    {p.stack.map((t, j) => <span key={j} className="tag accent">{t}</span>)}
+                  </div>
+                  <div className="proj-desc">{p.desc}</div>
+                  {p.github &&
+                <a className="proj-link" href={p.github} target="_blank" rel="noopener noreferrer">
+                      {lang === 'PT' ? 'Ver no GitHub →' : 'View on GitHub →'}
+                    </a>
+                }
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* CONTACT MODAL */}
