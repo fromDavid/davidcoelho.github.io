@@ -474,10 +474,18 @@
     font-weight: 700;
     line-height: 1.3;
   }
+  .proj-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
   .proj-image-placeholder {
+    width: 100%;
     border: 1px dashed var(--border);
-    border-radius: 5px;
-    height: 110px;
+    border-radius: 6px;
+    height: 190px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -500,15 +508,22 @@
     color: #555552;
     line-height: 1.65;
   }
-  .proj-link {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--accent);
+  .proj-cta {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: 4px;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
     text-decoration: none;
-    margin-top: 2px;
+    transition: border-color 0.15s;
   }
-  .proj-link:hover { text-decoration: underline; }
+  .proj-cta:hover { border-color: var(--text); }
 
   /* CONTACT MODAL */
   .modal-overlay {
@@ -663,7 +678,8 @@ const content = {
       personal: false,
       stack: ["Microsoft Access", "Excel", "Modelação de Dados"],
       desc: "Conceção e implementação de uma base de dados relacional (Microsoft Access) para um supermercado fictício (\"Sem Fiado\"), integrando vendas, produtos, clientes, fornecedores e stock. A partir do modelo de dados, foram definidos KPIs de rotação de stock, ruturas e excesso de inventário, visualizados num dashboard em Microsoft Excel para apoiar decisões de reposição e gestão de stock.",
-      github: null
+      link: null,
+      image: "uploads/projects/bi-retalho-grafico.png"
     },
     {
       title: "Planeamento e Controlo Orçamental de Custos de Produção",
@@ -671,7 +687,8 @@ const content = {
       personal: false,
       stack: ["R", "Typst", "Análise de Variância Orçamental"],
       desc: "Análise de planeamento, orçamentação e controlo orçamental aplicada a uma empresa fictícia de produção de cerveja. Inclui orçamentação de custos de produção, apuramento de custos reais, análise de desvios (preço/quantidade), indicadores de desempenho e recomendações corretivas, com dashboard de suporte desenvolvido em R.",
-      github: null
+      link: "https://019dfdb3-7e3c-7494-1687-039a0f337e5f.share.connect.posit.cloud/",
+      image: null
     },
     {
       title: "Dashboard de Análise de Risco de Ativos",
@@ -679,15 +696,17 @@ const content = {
       personal: false,
       stack: ["R", "Shiny", "TTR", "Plotly"],
       desc: "Aplicação Shiny para análise técnica e de risco de ativos financeiros (ações, cripto, commodities, forex, índices), com scoring técnico automático (RSI, MACD, Bandas de Bollinger, médias móveis), classificação de risco por tipo de ativo, e simulação de Monte Carlo para projeção de preços.",
-      github: null
+      link: "https://019f6582-a482-e221-6397-24190b56ab5b.share.connect.posit.cloud/",
+      image: null
     },
     {
-      title: "Finance Analyser v2",
+      title: "Poupadinho",
       context: "Projeto Pessoal",
       personal: true,
       stack: ["Python", "FastAPI", "React/Vite", "Docker"],
       desc: "Plataforma de análise de investimentos self-hosted (FastAPI + React), com comparação Black-Litterman vs Markowitz validada por walk-forward e CPCV, simulação Monte Carlo, e pré-filtro de saúde financeira antes da otimização de portfólio.",
-      github: "[GITHUB_URL]"
+      link: null,
+      image: "uploads/projects/poupadinho-dashboard.png"
     }],
 
     experience: [
@@ -794,7 +813,8 @@ const content = {
       personal: false,
       stack: ["Microsoft Access", "Excel", "Data Modelling"],
       desc: "Design and implementation of a relational database (Microsoft Access) for a fictitious supermarket (\"Sem Fiado\"), integrating sales, products, customers, suppliers and stock. From the data model, KPIs for stock turnover, stockouts and excess inventory were defined, visualised in a Microsoft Excel dashboard to support restocking and inventory decisions.",
-      github: null
+      link: null,
+      image: "uploads/projects/bi-retalho-grafico.png"
     },
     {
       title: "Production Cost Budgeting & Variance Control",
@@ -802,7 +822,8 @@ const content = {
       personal: false,
       stack: ["R", "Typst", "Budget Variance Analysis"],
       desc: "Planning, budgeting and budgetary control analysis applied to a fictitious beer production company. Includes production cost budgeting, actual cost tracking, price/quantity variance analysis, performance indicators and corrective recommendations, with a supporting dashboard built in R.",
-      github: null
+      link: "https://019dfdb3-7e3c-7494-1687-039a0f337e5f.share.connect.posit.cloud/",
+      image: null
     },
     {
       title: "Asset Risk Analysis Dashboard",
@@ -810,15 +831,17 @@ const content = {
       personal: false,
       stack: ["R", "Shiny", "TTR", "Plotly"],
       desc: "Shiny application for technical and risk analysis of financial assets (stocks, crypto, commodities, forex, indices), with automatic technical scoring (RSI, MACD, Bollinger Bands, moving averages), risk classification by asset type, and Monte Carlo simulation for price projection.",
-      github: null
+      link: "https://019f6582-a482-e221-6397-24190b56ab5b.share.connect.posit.cloud/",
+      image: null
     },
     {
-      title: "Finance Analyser v2",
+      title: "Poupadinho",
       context: "Personal Project",
       personal: true,
       stack: ["Python", "FastAPI", "React/Vite", "Docker"],
       desc: "Self-hosted investment analysis platform (FastAPI + React), with Black-Litterman vs Markowitz comparison validated via walk-forward and CPCV, Monte Carlo simulation, and a financial health pre-filter ahead of portfolio optimisation.",
-      github: "[GITHUB_URL]"
+      link: null,
+      image: "uploads/projects/poupadinho-dashboard.png"
     }],
 
     experience: [
@@ -898,6 +921,18 @@ const content = {
     successMsg: { title: "Message sent!", text: "Thank you for reaching out. I'll reply soon." }
   }
 };
+
+function ProjectImage({ src, alt, lang }) {
+  const [error, setError] = useState(false);
+  if (!src || error) {
+    return (
+      <div className="proj-image-placeholder">
+        {lang === 'PT' ? 'Imagem em breve' : 'Image coming soon'}
+      </div>);
+
+  }
+  return <img className="proj-image" src={src} alt={alt} onError={() => setError(true)} />;
+}
 
 function App() {
   const [lang, setLang] = useState(() => localStorage.getItem('cv_lang') || 'PT');
@@ -1127,16 +1162,16 @@ function App() {
             <div className="proj-grid">
               {c.projects.map((p, i) =>
               <div className="proj-card" key={i}>
+                  {p.image && <ProjectImage src={p.image} alt={p.title} lang={lang} />}
                   <div className={`proj-context ${p.personal ? 'personal' : ''}`}>{p.context}</div>
                   <div className="proj-title">{p.title}</div>
-                  <div className="proj-image-placeholder">{lang === 'PT' ? 'Screenshot / gráfico em breve' : 'Screenshot / chart coming soon'}</div>
                   <div className="proj-tags">
                     {p.stack.map((t, j) => <span key={j} className="tag accent">{t}</span>)}
                   </div>
                   <div className="proj-desc">{p.desc}</div>
-                  {p.github &&
-                <a className="proj-link" href={p.github} target="_blank" rel="noopener noreferrer">
-                      {lang === 'PT' ? 'Ver no GitHub →' : 'View on GitHub →'}
+                  {p.link &&
+                <a className="proj-cta" href={p.link} target="_blank" rel="noopener noreferrer">
+                      {lang === 'PT' ? 'Ver projeto' : 'View project'}
                     </a>
                 }
                 </div>
