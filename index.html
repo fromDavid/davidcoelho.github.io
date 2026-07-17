@@ -47,7 +47,12 @@
     padding: 40px 32px;
     z-index: 100;
     overflow-y: auto;
+    transition: transform 0.25s ease;
   }
+
+  .sidebar-close { display: none; }
+  .mobile-topbar { display: none; }
+  .sidebar-overlay { display: none; }
 
   .sidebar-name {
     font-family: var(--font-display);
@@ -631,12 +636,83 @@
 
   @media (max-width: 900px) {
     :root { --sidebar-w: 0px; }
-    .sidebar { transform: translateX(-100%); }
-    .main { margin-left: 0; padding: 20px; }
+    .sidebar {
+      transform: translateX(-100%);
+      width: min(300px, 82vw);
+      z-index: 160;
+      box-shadow: 20px 0 60px rgba(0,0,0,0.35);
+    }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-close {
+      display: block;
+      position: absolute;
+      top: 16px; right: 20px;
+      background: none;
+      border: none;
+      color: #9a9a96;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .sidebar-overlay {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 150;
+      animation: fadeIn 0.2s ease;
+    }
+    .main { margin-left: 0; padding: 20px; padding-top: 76px; }
+    .mobile-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 56px;
+      padding: 0 16px;
+      background: var(--text);
+      z-index: 140;
+    }
+    .mobile-menu-btn {
+      background: none;
+      border: none;
+      color: #f8f8f6;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 8px;
+      line-height: 1;
+    }
+    .mobile-topbar-name {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: #f8f8f6;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mobile-lang-toggle { flex-shrink: 0; margin: 0; width: 68px; }
     .dashboard-grid { grid-template-columns: 1fr; }
     .proj-grid { grid-template-columns: 1fr; }
     .hero { grid-template-columns: 1fr; }
-    .hero-actions { align-items: flex-start; flex-direction: row; }
+    .hero-actions { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 28px 20px; }
+    .hero-headline { font-size: 30px; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-photo { align-self: center; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+    .panel { padding: 20px; }
+    .proj-image, .proj-image-placeholder { height: 150px; }
+    .exp-meta { flex-direction: column; gap: 2px; }
+    .cert-item { grid-template-columns: 1fr; align-items: flex-start; }
+    .modal { padding: 24px; }
+    .lang-table { display: block; overflow-x: auto; }
   }
 </style>
 </head>
@@ -943,6 +1019,7 @@ function App() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [tweaks, setTweaks] = useState(TWEAK_DEFAULTS);
   const [showTweaks, setShowTweaks] = useState(false);
   const sectionRefs = useRef([]);
@@ -992,8 +1069,20 @@ function App() {
 
   return (
     <>
+      {/* MOBILE TOPBAR */}
+      <div className="mobile-topbar">
+        <button className="mobile-menu-btn" onClick={() => setSidebarOpen(true)} aria-label="Menu">☰</button>
+        <span className="mobile-topbar-name">David Dionísio Coelho</span>
+        <div className="lang-toggle mobile-lang-toggle">
+          <button className={`lang-btn ${lang === 'PT' ? 'active' : ''}`} onClick={() => setLang('PT')}>PT</button>
+          <button className={`lang-btn ${lang === 'EN' ? 'active' : ''}`} onClick={() => setLang('EN')}>EN</button>
+        </div>
+      </div>
+
       {/* SIDEBAR */}
-      <aside className="sidebar">
+      {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
+      <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <button className="sidebar-close" onClick={() => setSidebarOpen(false)} aria-label="Close menu">×</button>
         <div className="sidebar-name">David Dionísio Coelho</div>
         <div className="sidebar-title">
           {lang === 'PT' ? 'Mestrando em Economia\nFinancial Track · FEUC' : 'MSc Economics\nFinancial Track · FEUC'}
@@ -1005,7 +1094,7 @@ function App() {
         <div className="nav-label">{lang === 'PT' ? 'Secções' : 'Sections'}</div>
         {c.nav.map((label, i) =>
         <a key={i} className={`nav-link ${activeSection === i ? 'active' : ''}`}
-        onClick={() => {scrollTo(sectionIds[i]);setActiveSection(i);}}>
+        onClick={() => {scrollTo(sectionIds[i]);setActiveSection(i);setSidebarOpen(false);}}>
             <span className="dot" />
             {label}
           </a>
