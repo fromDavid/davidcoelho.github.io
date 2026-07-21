@@ -749,10 +749,11 @@ const content = {
       langs: "Línguas"
     },
     skillCategories: [
-    { label: "Análise de Dados", type: "accent", tags: ["Python", "R", "Excel (avançado)", "SQL"] },
+    { label: "Análise de Dados", type: "accent", tags: ["Excel (avançado)"] },
     { label: "Visualização & BI", type: "accent", tags: ["Power BI", "Tabelas Dinâmicas", "Power Query", "R Shiny", "Tableau"] },
     { label: "Sistemas ERP", type: "normal", tags: ["Microsoft Navision", "Centralgest", "Primavera RH"] },
-    { label: "Soft Skills", type: "normal", tags: ["Liderança de Equipas", "Inteligência Emocional", "Comunicação", "Resolução de Problemas", "Adaptabilidade", "Resiliência"] }],
+    { label: "Soft Skills", type: "normal", tags: ["Liderança de Equipas", "Inteligência Emocional", "Comunicação", "Resolução de Problemas", "Adaptabilidade", "Resiliência"] },
+    { label: "Análise de Dados", type: "accent", tags: ["Python", "R"] }],
 
     projects: [
     {
@@ -903,7 +904,7 @@ const content = {
       title: "Production Cost Budgeting & Variance Control",
       context: "Management Control · Cervejeira do Mondego Case Study",
       personal: false,
-      stack: ["R", "Typst", "Budget Variance Analysis"],
+      stack: ["R", "Shiny", "TTR", "Plotly"],
       desc: "Planning, budgeting and budgetary control analysis applied to a fictitious beer production company. Includes production cost budgeting, actual cost tracking, price/quantity variance analysis, performance indicators and corrective recommendations, with a supporting dashboard built in R.",
       link: "https://019dfdb3-7e3c-7494-1687-039a0f337e5f.share.connect.posit.cloud/",
       image: "uploads/projects/controlo-orcamental-dashboard.png"
@@ -916,15 +917,6 @@ const content = {
       desc: "Shiny application for technical and risk analysis of financial assets (stocks, crypto, commodities, forex, indices), with automatic technical scoring (RSI, MACD, Bollinger Bands, moving averages), risk classification by asset type, and Monte Carlo simulation for price projection.",
       link: "https://019f6582-a482-e221-6397-24190b56ab5b.share.connect.posit.cloud/",
       image: "uploads/projects/risk-analytics-dashboard.png"
-    },
-    {
-      title: "Poupadinho",
-      context: "Personal Project",
-      personal: true,
-      stack: ["Python", "FastAPI", "React/Vite", "Docker"],
-      desc: "Self-hosted investment analysis platform (FastAPI + React), with Black-Litterman vs Markowitz comparison validated via walk-forward and CPCV, Monte Carlo simulation, and a financial health pre-filter ahead of portfolio optimisation.",
-      link: null,
-      image: "uploads/projects/poupadinho-dashboard.png"
     }],
 
     experience: [
