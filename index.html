@@ -4,6 +4,11 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>David Dionísio Coelho</title>
+<meta name="description" content="David Dionísio Coelho — Mestrando em Economia (Financial Track, FEUC) com 8 anos de experiência em gestão e controlo operacional: orçamento, capex, controlo de desvios e reporting analítico."/>
+<meta property="og:title" content="David Dionísio Coelho"/>
+<meta property="og:description" content="Mestrando em Economia (Financial Track, FEUC) · Gestão e controlo operacional · Orçamento, capex e reporting analítico."/>
+<meta property="og:type" content="profile"/>
+<meta property="og:image" content="uploads/eu_cropped.png"/>
 <link rel="icon" type="image/svg+xml" href="uploads/favicon/favicon.svg"/>
 <link rel="icon" type="image/png" sizes="32x32" href="uploads/favicon/favicon-32x32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="uploads/favicon/favicon-16x16.png"/>
@@ -368,6 +373,10 @@
     left: 0;
     color: var(--border);
   }
+
+  .print-contacts { display: none; }
+  .skills-note { font-size: 11px; color: var(--muted); margin-top: -4px; }
+  .exp-note { font-size: 12px; font-style: italic; color: var(--muted); margin-top: -4px; margin-bottom: 8px; }
 
   /* EDUCATION */
   .edu-item {
@@ -736,24 +745,24 @@ const content = {
   PT: {
     eyebrow: "Disponível para novas oportunidades",
     headline: "David Dionísio\nCoelho",
-    bio: "Mestrando em Economia (Financial Track) na FEUC, com 8 anos de experiência em gestão operacional e controlo. Já trabalhei com budget, capex, controlo mensal de desvios e reporting analítico para a gestão em organizações de média dimensão.",
+    bio: "Mestrando em Economia — Financial Track (FEUC), com 8 anos de experiência em gestão e controlo operacional. Trabalhei com orçamento, capex, controlo mensal de desvios e reporting analítico para a gestão em organizações de média dimensão.\n\nAtualmente a desenvolver a dissertação de mestrado sobre o Impacto da Inovação e do Investimento em I&D no Desempenho Financeiro: Evidência de Empresas Portuguesas.",
     downloadBtn: "Descarregar CV",
     contactBtn: "Contactar",
-    nav: ["Perfil", "Competências", "Experiência", "Projetos", "Formação", "Certificações", "Línguas"],
+    nav: ["Perfil", "Competências", "Experiência", "Projetos", "Formação", "Certificações", "Idiomas"],
     sections: {
       skills: "Competências",
       experience: "Experiência Profissional",
       projects: "Projetos",
       education: "Formação Académica",
-      certs: "Certificações",
-      langs: "Línguas"
+      certs: "Certificações e Formação Complementar",
+      langs: "Idiomas"
     },
     skillCategories: [
-    { label: "Gestão Operacional", type: "accent", tags: ["Controlo Orçamental", "Análise de Desvios", "Gestão de Equipas", "Compliance (SST/HACCP)"] },
-    { label: "Sistemas ERP", type: "accent", tags: ["Microsoft Navision", "Centralgest", "Primavera RH"] },
-    { label: "Excel & Dados", type: "normal", tags: ["Excel (avançado)", "Power Query"] },
-    { label: "Visualização", type: "normal", tags: ["Power BI", "Python", "R"] },
-    { label: "Soft Skills", type: "normal", tags: ["Liderança de Equipas", "Comunicação", "Resolução de Problemas", "Adaptabilidade", "Resiliência"] }],
+    { label: "Análise de Dados", type: "accent", tags: ["Stata*", "Python*", "R*", "Microsoft Excel (avançado)"] },
+    { label: "Visualização", type: "normal", tags: ["Power BI*", "Excel (tabelas dinâmicas, Power Query)"] },
+    { label: "Sistemas", type: "accent", tags: ["Microsoft Navision", "Centralgest", "Primavera RH"] },
+    { label: "Soft skills", type: "normal", tags: ["Liderança de equipas", "Inteligência emocional", "Comunicação", "Resolução de problemas", "Adaptabilidade", "Resiliência"] }],
+    skillsNote: "*Contexto académico",
 
     projects: [
     {
@@ -786,7 +795,7 @@ const content = {
 
     experience: [
     {
-      role: "GI Flex Major Technician",
+      role: "Técnico GI Flex Major",
       company: "Olympus Medical Products Portugal",
       period: "Dez 2024 – Set 2025",
       bullets: []
@@ -796,31 +805,32 @@ const content = {
       company: "Termas de Luso · Sociedade Central de Cervejas",
       period: "Ago 2022 – Dez 2023",
       bullets: [
-      "Monitorização e reporte de KPIs de desempenho (taxa de ocupação, taxa de remarcação, controlo de satisfação).",
-      "Criei um sistema de identificação dos equipamentos críticos para manutenção preventiva, de forma a reduzir os tempos de identificação, falhas e interrupções na operação.",
-      "Criei um sistema de monitorização de KPIs que permitiu equilibrar a distribuição de recursos para otimização da eficiência da equipa."]
+      "Monitorização e reporte de KPIs de desempenho (taxa de ocupação, satisfação).",
+      "Criei um sistema de identificação de equipamentos críticos para manutenção preventiva, de forma a reduzir tempos de identificação, avarias e interrupções operacionais.",
+      "Criei um sistema de monitorização de KPIs que permitiu equilibrar a distribuição de recursos para otimizar a eficiência da equipa."]
 
     },
     {
       role: "Diretor Técnico",
-      company: "Doce Viver, Lda · Grupo ORPEA — 71 residentes · 41 colaboradores",
+      company: "Doce Viver, Lda · Grupo ORPEA",
+      note: "Gestão integral de unidade residencial sénior: 71 residentes · 41 colaboradores",
       period: "Set 2019 – Jul 2022",
       bullets: [
-      "Controlo financeiro mensal em Navision: acompanhamento de budget vs. realizado, análise de desvios por rubrica (capex, massa salarial, dívida de clientes); inputs mensais para processamento salarial em Primavera RH.",
-      "Acompanhamento dos indicadores de ocupação, com uma taxa média de 85%, e análises de tendências para maximização da taxa de utilização da unidade.",
-      "Formação e liderança de equipas multidisciplinares (enfermagem, fisioterapia, animação, hotelaria, manutenção e cozinha) com foco em resultados e melhoria contínua.",
-      "Implementação de controlo de SST e HACCP, planos de emergência e auditorias internas periódicas com ações corretivas documentadas.",
-      "Recrutamento, formação e gestão de rácios e turnos para 41 colaboradores.",
-      "Garantia da continuidade operacional da unidade durante a pandemia de COVID-19, com implementação de protocolos de segurança e gestão de crises."]
+      "Realizei o controlo financeiro mensal em Navision: acompanhamento do orçamento vs. real, análise de desvios por rubrica (capex, salários, dívida de clientes). Envio mensal de dados para o processamento salarial em Primavera RH.",
+      "Monitorizei indicadores de ocupação, assegurei uma taxa de ocupação média de 85% e realizei análises de tendência para maximizar a taxa de utilização da unidade.",
+      "Responsável pela formação e liderança de equipas multidisciplinares (enfermagem, fisioterapia, animação, hotelaria, manutenção e cozinha), com foco em resultados e melhoria contínua.",
+      "Implementei controlos de segurança e saúde no trabalho (SST) e HACCP, planos de emergência e auditorias internas periódicas com ações corretivas documentadas.",
+      "Responsável pelo recrutamento, formação, gestão de rácios e elaboração de escalas de turnos para 41 colaboradores.",
+      "Assegurei a continuidade operacional da unidade durante a pandemia de COVID-19, implementando protocolos de segurança e gestão de crise."]
 
     },
     {
-      role: "Adjunto da Direção Técnica",
+      role: "Diretor Técnico Adjunto",
       company: "Doce Viver, Lda · Grupo ORPEA",
       period: "Out 2017 – Set 2019",
       bullets: [
-      "Apoio ao controlo operacional e garantia de compliance com as diretrizes do Grupo e requisitos regulamentares (auditorias, SST, HACCP).",
-      "Gestão de manutenção preventiva e corretiva de equipamentos, com controlo de fornecedores e disponibilidade da operação."]
+      "Apoiei o controlo operacional e a garantia de conformidade com as diretrizes do Grupo e os requisitos regulamentares (auditorias, SST, HACCP).",
+      "Realizei a gestão da manutenção preventiva e corretiva de equipamentos, com controlo de fornecedores e da disponibilidade operacional."]
 
     },
     {
@@ -828,7 +838,7 @@ const content = {
       company: "Doce Viver, Lda",
       period: "Jul – Out 2017",
       bullets: [
-      "Emissão de faturação (Faturas, NC, Recibos, SAF-T) em Centralgest; encomendas a fornecedores e atualização de dados de clientes."]
+      "Emissão de faturação (Faturas, Notas de Crédito, Recibos, SAF-T) em Centralgest; encomendas a fornecedores e atualização de dados de clientes."]
 
     }],
 
@@ -837,33 +847,37 @@ const content = {
       degree: "Mestrado em Economia — Financial Track",
       school: "Faculdade de Economia, Universidade de Coimbra",
       period: "2025 – presente",
-      details: "Conclusão prevista: 2027 · Nível 7 QEQ · Áreas nucleares: Finanças Empresariais · Controlo de Gestão · Ciências dos Dados · Inteligência Empresarial"
+      details: [
+      "Conclusão prevista: 2027 · Nível 7 do QEQ",
+      "Áreas principais: Finanças Empresariais · Controlo de Gestão · Ciência de Dados · Business Intelligence",
+      "Dissertação: Impacto da Inovação e do Investimento em I&D no Desempenho Financeiro: Evidência de Empresas Portuguesas."]
     },
     {
       degree: "Licenciatura em Ciências da Comunicação Social — Multimédia",
       school: "Instituto Miguel Torga, Coimbra",
       period: "2014 – 2017",
-      details: "Nível 6 QEQ"
+      details: ["Nível 6 do QEQ"]
     }],
 
     certs: [
-    { name: "Certificado de Competências Pedagógicas (CCP)", detail: "2018 · F665249/2018", year: "2018" },
-    { name: "English Language Training", detail: "Wall Street English Portugal · B2 → C1", year: "2025–" }],
+    { name: "Certificado de Competências Pedagógicas (CCP)", detail: "Formação de adultos, conceção de programas, avaliação das aprendizagens. · F665249/2018", year: "2018" },
+    { name: "Formação em Língua Inglesa", detail: "Wall Street English Portugal (Nível atual B2 → C1)", year: "2025 – presente" }],
 
     langs: [
     { lang: "Português", comp: "Nativo", oral: "Nativo", written: "Nativo", native: true },
-    { lang: "Inglês", comp: "B2", oral: "B2", written: "B2", native: false }],
+    { lang: "Inglês", comp: "C1", oral: "C1", written: "C1", native: false },
+    { lang: "Espanhol", comp: "B1", oral: "B1", written: "B1", native: false }],
 
-    langHeaders: ["Língua", "Compreensão", "Expressão oral", "Escrita"],
+    langHeaders: ["Idioma", "Compreensão", "Fala", "Escrita"],
     contactTitle: "Vamos falar",
-    contactSub: "Envie uma mensagem e entro em contacto brevemente.",
+    contactSub: "Escreva a sua mensagem — será aberta no seu cliente de email, pronta a enviar.",
     formLabels: { name: "Nome", email: "Email", message: "Mensagem", send: "Enviar Mensagem" },
-    successMsg: { title: "Mensagem enviada!", text: "Obrigado pelo contacto. Responderei em breve." }
+    successMsg: { title: "Quase lá!", text: "A mensagem foi aberta no seu cliente de email. Basta clicar em enviar. Se nada abriu, escreva para davidcoelho.dc@gmail.com." }
   },
   EN: {
     eyebrow: "Open to new opportunities",
     headline: "David Dionísio\nCoelho",
-    bio: "MSc Economics student (Financial Track) at FEUC, with 8 years of experience in operational management and control. I have worked with budget, capex, monthly variance control, and analytical reporting for management in medium-sized organisations.",
+    bio: "Master's Student in Economics — Financial Track (FEUC) with 8 years of experience in operational management and control. I have worked with budget, capex, monthly variance control, and analytical reporting for management in medium-sized organizations.\n\nCurrently developing a Master's thesis on the Impact of Innovation and R&D Investment on Financial Performance: Evidence from Portuguese Firms.",
     downloadBtn: "Download CV",
     contactBtn: "Get in Touch",
     nav: ["Profile", "Skills", "Experience", "Projects", "Education", "Certifications", "Languages"],
@@ -871,16 +885,16 @@ const content = {
       skills: "Skills",
       experience: "Professional Experience",
       projects: "Projects",
-      education: "Education",
-      certs: "Certifications",
+      education: "Academic Background",
+      certs: "Certifications and Additional Training",
       langs: "Languages"
     },
     skillCategories: [
-    { label: "Operations Management", type: "accent", tags: ["Budget Control", "Variance Analysis", "Team Management", "Compliance (Health & Safety/HACCP)"] },
-    { label: "ERP Systems", type: "accent", tags: ["Microsoft Navision", "Centralgest", "Primavera RH"] },
-    { label: "Excel & Data", type: "normal", tags: ["Excel (advanced)", "Power Query"] },
-    { label: "Visualisation", type: "normal", tags: ["Power BI", "Python", "R"] },
-    { label: "Soft Skills", type: "normal", tags: ["Team Leadership", "Communication", "Problem Solving", "Adaptability", "Resilience"] }],
+    { label: "Data Analysis", type: "accent", tags: ["Stata*", "Python*", "R*", "Microsoft Excel (advanced)"] },
+    { label: "Visualization", type: "normal", tags: ["Power BI*", "Excel (pivot tables, Power Query)"] },
+    { label: "Systems", type: "accent", tags: ["Microsoft Navision", "Centralgest", "Primavera RH"] },
+    { label: "Soft skills", type: "normal", tags: ["Team leadership", "Emotional intelligence", "Communication", "Problem solving", "Adaptability", "Resilience"] }],
+    skillsNote: "*Academic context",
 
     projects: [
     {
@@ -896,7 +910,7 @@ const content = {
       title: "Production Cost Budgeting & Variance Control",
       context: "Management Control · Cervejeira do Mondego Case Study",
       personal: false,
-      stack: ["R", "Shiny", "TTR", "Plotly"],
+      stack: ["R", "Typst", "Budget Variance Analysis"],
       desc: "Planning, budgeting and budgetary control analysis applied to a fictitious beer production company. Includes production cost budgeting, actual cost tracking, price/quantity variance analysis, performance indicators and corrective recommendations, with a supporting dashboard built in R.",
       link: "https://019dfdb3-7e3c-7494-1687-039a0f337e5f.share.connect.posit.cloud/",
       image: "uploads/projects/controlo-orcamental-dashboard.png"
@@ -925,19 +939,20 @@ const content = {
       bullets: [
       "Monitoring and reporting of performance KPIs (occupancy rate, rebooking rate, satisfaction control).",
       "Created a system for identifying critical equipment for preventive maintenance, in order to reduce identification times, failures, and operational interruptions.",
-      "Created a KPI monitoring system that allowed for balancing resource distribution to optimise team efficiency."]
+      "Created a KPI monitoring system that allowed for balancing resource distribution to optimize team efficiency."]
 
     },
     {
       role: "Technical Director",
-      company: "Doce Viver, Lda · Grupo ORPEA — 71 residents · 41 staff",
+      company: "Doce Viver, Lda · Grupo ORPEA",
+      note: "Full management of senior residential unit: 71 residents · 41 employees",
       period: "Sep 2019 – Jul 2022",
       bullets: [
-      "Monthly financial control in Navision: tracking of budget vs. actuals, variance analysis by line item (capex, payroll, client debt); monthly inputs for payroll processing in Primavera RH.",
-      "Monitored occupancy indicators, securing an average occupancy rate of 85%, and carried out trend analyses to maximise the unit's utilisation rate.",
-      "Training and leading multidisciplinary teams (nursing, physiotherapy, activities, hospitality, maintenance, and kitchen) with a focus on results and continuous improvement.",
-      "Implementation of health & safety (SST) and HACCP controls, emergency plans, and periodic internal audits with documented corrective actions.",
-      "Recruitment, training, ratio management, and shift scheduling for 41 staff.",
+      "Carried out monthly financial control in Navision: tracking of budget vs. actuals, variance analysis by line item (capex, payroll, client debt). Monthly inputs for payroll processing in Primavera RH.",
+      "Monitored occupancy indicators, secured an average occupancy rate of 85%, and carried out trend analyses to maximize the unit's utilization rate.",
+      "Responsible for training and leading multidisciplinary teams (nursing, physiotherapy, activities, hospitality, maintenance, and kitchen) with a focus on results and continuous improvement.",
+      "Implemented health & safety (SST) and HACCP controls, emergency plans, and periodic internal audits with documented corrective actions.",
+      "Responsible for recruitment, training, ratio management, and shift scheduling for 41 employees.",
       "Ensured operational continuity of the unit during the COVID-19 pandemic, implementing safety protocols and crisis management."]
 
     },
@@ -947,7 +962,7 @@ const content = {
       period: "Oct 2017 – Sep 2019",
       bullets: [
       "Supported operational control and compliance assurance with Group guidelines and regulatory requirements (audits, SST, HACCP).",
-      "Preventive and corrective equipment maintenance management, with supplier control and operational availability."]
+      "Carried out preventive and corrective equipment maintenance management, with supplier control and operational availability."]
 
     },
     {
@@ -961,33 +976,39 @@ const content = {
 
     education: [
     {
-      degree: "MSc Economics — Financial Track",
-      school: "Faculty of Economics, University of Coimbra",
+      degree: "Master's in Economics — Financial Track",
+      school: "Faculdade de Economia, Universidade de Coimbra",
       period: "2025 – present",
-      details: "Expected completion: 2027 · EQF Level 7 · Core areas: Corporate Finance · Management Control · Data Science · Business Intelligence"
+      details: [
+      "Expected completion: 2027 · EQF Level 7",
+      "Core areas: Corporate Finance · Management Control · Data Science · Business Intelligence",
+      "Thesis: Impact of Innovation and R&D Investment on Financial Performance: Evidence from Portuguese Firms."]
     },
     {
-      degree: "BSc Communication Sciences — Multimedia",
+      degree: "Bachelor's Degree in Social Communication Sciences — Multimedia",
       school: "Instituto Miguel Torga, Coimbra",
       period: "2014 – 2017",
-      details: "EQF Level 6"
+      details: ["EQF Level 6"]
     }],
 
     certs: [
-    { name: "Pedagogical Skills Certificate (CCP)", detail: "2018 · F665249/2018", year: "2018" },
-    { name: "English Language Training", detail: "Wall Street English Portugal · B2 → C1", year: "2025–" }],
+    { name: "Pedagogical Competency Certificate (CCP)", detail: "Adult training, program design, learning assessment. · F665249/2018", year: "2018" },
+    { name: "English Language Training", detail: "Wall Street English Portugal (Current level B2 → C1)", year: "2025 – present" }],
 
     langs: [
     { lang: "Portuguese", comp: "Native", oral: "Native", written: "Native", native: true },
-    { lang: "English", comp: "B2", oral: "B2", written: "B2", native: false }],
+    { lang: "English", comp: "C1", oral: "C1", written: "C1", native: false },
+    { lang: "Spanish", comp: "B1", oral: "B1", written: "B1", native: false }],
 
     langHeaders: ["Language", "Comprehension", "Speaking", "Writing"],
     contactTitle: "Let's Talk",
-    contactSub: "Send a message and I'll get back to you shortly.",
+    contactSub: "Write your message — it will open in your email client, ready to send.",
     formLabels: { name: "Name", email: "Email", message: "Message", send: "Send Message" },
-    successMsg: { title: "Message sent!", text: "Thank you for reaching out. I'll reply soon." }
+    successMsg: { title: "Almost there!", text: "Your message was opened in your email client. Just hit send. If nothing opened, write to davidcoelho.dc@gmail.com." }
   }
 };
+
+const pad = (n) => String(n).padStart(2, '0');
 
 function ProjectImage({ src, alt, lang }) {
   const [error, setError] = useState(false);
@@ -1002,7 +1023,9 @@ function ProjectImage({ src, alt, lang }) {
 }
 
 function App() {
-  const [lang, setLang] = useState(() => localStorage.getItem('cv_lang') || 'PT');
+  const [lang, setLang] = useState(() => {
+    try { return localStorage.getItem('cv_lang') === 'EN' ? 'EN' : 'PT'; } catch (e) { return 'PT'; }
+  });
   const [showModal, setShowModal] = useState(false);
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -1014,7 +1037,8 @@ function App() {
   const c = content[lang];
 
   useEffect(() => {
-    localStorage.setItem('cv_lang', lang);
+    try { localStorage.setItem('cv_lang', lang); } catch (e) {}
+    document.documentElement.lang = lang === 'PT' ? 'pt' : 'en';
   }, [lang]);
 
   useEffect(() => {
@@ -1050,10 +1074,24 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const subject = (lang === 'PT' ? 'Contacto via site — ' : 'Contact via website — ') + formState.name;
+    const body = `${formState.message}\n\n—\n${formState.name}\n${formState.email}`;
+    window.location.href = `mailto:davidcoelho.dc@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
   };
 
   const sectionIds = ['profile', 'skills', 'experience', 'projects', 'education', 'certs', 'langs'];
+
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((en) => en.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible.length) setActiveSection(sectionIds.indexOf(visible[0].target.id));
+    }, { rootMargin: '-15% 0px -60% 0px' });
+    sectionIds.forEach((id) => { const el = document.getElementById(id); if (el) observer.observe(el); });
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -1072,8 +1110,8 @@ function App() {
       <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
         <button className="sidebar-close" onClick={() => setSidebarOpen(false)} aria-label="Close menu">×</button>
         <div className="sidebar-name">David Dionísio Coelho</div>
-        <div className="sidebar-title">
-          {lang === 'PT' ? 'Mestrando em Economia\nFinancial Track · FEUC' : 'MSc Economics\nFinancial Track · FEUC'}
+        <div className="sidebar-title" style={{ whiteSpace: 'pre-line' }}>
+          {lang === 'PT' ? 'Mestrando em Economia\nFinancial Track · FEUC' : 'MSc Student in Economics\nFinancial Track · FEUC'}
         </div>
         <div className="lang-toggle" style={{marginBottom:'28px', marginTop:'-8px'}}>
           <button className={`lang-btn ${lang === 'PT' ? 'active' : ''}`} onClick={() => setLang('PT')}>PT</button>
@@ -1093,12 +1131,12 @@ function App() {
             <a href="mailto:davidcoelho.dc@gmail.com">davidcoelho.dc@gmail.com</a>
           </div>
           <div className="contact-item">
-            <div className="contact-label">Tel</div>
-            (+351) 935 891 401
+            <div className="contact-label">{lang === 'PT' ? 'Telemóvel' : 'Mobile'}</div>
+            <a href="tel:+351935891401">(+351) 935 891 401</a>
           </div>
           <div className="contact-item">
             <div className="contact-label">LinkedIn</div>
-            <a href="https://linkedin.com/in/david-d-coelho" target="_blank">david-d-coelho</a>
+            <a href="https://linkedin.com/in/david-d-coelho" target="_blank" rel="noopener noreferrer">david-d-coelho</a>
           </div>
           <div className="contact-item">
             <div className="contact-label">{lang === 'PT' ? 'Localização' : 'Location'}</div>
@@ -1114,7 +1152,8 @@ function App() {
           <div>
             <div className="hero-eyebrow">{c.eyebrow}</div>
             <div className="hero-headline" style={{ whiteSpace: 'pre-line' }}>{c.headline}</div>
-            <div className="hero-bio">{c.bio}</div>
+            <div className="print-contacts">(+351) 935 891 401 · davidcoelho.dc@gmail.com · linkedin.com/in/david-d-coelho · Coimbra, Portugal</div>
+            <div className="hero-bio" style={{ whiteSpace: 'pre-line' }}>{c.bio}</div>
           </div>
           <div className="hero-actions">
             <img className="hero-photo" src="uploads/eu_cropped.png" alt="David Dionísio Coelho" style={{ width: "120px", margin: "0px", objectFit: "cover" }} />
@@ -1128,7 +1167,7 @@ function App() {
           <div className="panel full-width" style={{ animationDelay: '60ms' }}>
             <div className="panel-header">
               <span className="panel-title">{c.sections.skills}</span>
-              <span className="panel-count">04 {lang === 'PT' ? 'categorias' : 'categories'}</span>
+              <span className="panel-count">{pad(c.skillCategories.length)} {lang === 'PT' ? 'categorias' : 'categories'}</span>
             </div>
             {c.skillCategories.map((cat, i) =>
             <div className="skill-category" key={i}>
@@ -1140,6 +1179,7 @@ function App() {
                 </div>
               </div>
             )}
+            <div className="skills-note">{c.skillsNote}</div>
           </div>
         </section>
 
@@ -1149,7 +1189,7 @@ function App() {
             <div className="panel" style={{ animationDelay: '120ms' }}>
               <div className="panel-header">
                 <span className="panel-title">{c.sections.experience}</span>
-                <span className="panel-count">05</span>
+                <span className="panel-count">{pad(c.experience.length)}</span>
               </div>
               {c.experience.map((e, i) =>
               <div key={i} className="exp-item">
@@ -1158,6 +1198,7 @@ function App() {
                     <div className="exp-period">{e.period}</div>
                   </div>
                   <div className="exp-company">{e.company}</div>
+                  {e.note && <div className="exp-note">{e.note}</div>}
                   {e.bullets.length > 0 &&
                 <ul className="exp-bullets">
                       {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
@@ -1174,13 +1215,13 @@ function App() {
               <div className="panel" style={{ animationDelay: '160ms' }}>
                 <div className="panel-header">
                   <span className="panel-title">{c.sections.education}</span>
-                  <span className="panel-count">02</span>
+                  <span className="panel-count">{pad(c.education.length)}</span>
                 </div>
                 {c.education.map((e, i) =>
                 <div key={i} className="edu-item">
                     <div className="edu-degree">{e.degree}</div>
                     <div className="edu-school">{e.school} · {e.period}</div>
-                    <div className="edu-details">{e.details}</div>
+                    {e.details.map((d, j) => <div key={j} className="edu-details">{d}</div>)}
                   </div>
                 )}
               </div>
@@ -1191,7 +1232,7 @@ function App() {
               <div className="panel" style={{ animationDelay: '200ms' }}>
                 <div className="panel-header">
                   <span className="panel-title">{c.sections.certs}</span>
-                  <span className="panel-count">02</span>
+                  <span className="panel-count">{pad(c.certs.length)}</span>
                 </div>
                 {c.certs.map((cert, i) =>
                 <div key={i} className="cert-item">
@@ -1210,7 +1251,7 @@ function App() {
               <div className="panel" style={{ animationDelay: '240ms' }}>
                 <div className="panel-header">
                   <span className="panel-title">{c.sections.langs}</span>
-                  <span className="panel-count">02</span>
+                  <span className="panel-count">{pad(c.langs.length)}</span>
                 </div>
                 <table className="lang-table">
                   <thead>
@@ -1237,7 +1278,7 @@ function App() {
           <div className="panel full-width" style={{ animationDelay: '280ms' }}>
             <div className="panel-header">
               <span className="panel-title">{c.sections.projects}</span>
-              <span className="panel-count">04 {lang === 'PT' ? 'projetos' : 'projects'}</span>
+              <span className="panel-count">{pad(c.projects.length)} {lang === 'PT' ? 'projetos' : 'projects'}</span>
             </div>
             <div className="proj-grid">
               {c.projects.map((p, i) =>
@@ -1339,7 +1380,8 @@ function App() {
 
       <style>{`
         @media print {
-          .sidebar, .hero-actions, .tweaks-panel { display: none !important; }
+          .sidebar, .hero-actions, .tweaks-panel, .mobile-topbar { display: none !important; }
+          .print-contacts { display: block !important; font-size: 12px; margin-bottom: 12px; color: #444; }
           .main { margin-left: 0 !important; padding: 20px !important; }
           .panel { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
           .dashboard-grid { grid-template-columns: 1fr 1fr; }
