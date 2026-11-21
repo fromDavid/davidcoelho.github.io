@@ -8,34 +8,92 @@
 <meta property="og:title" content="David Dionísio Coelho"/>
 <meta property="og:description" content="Mestrando em Economia (Financial Track, FEUC) · Gestão e controlo operacional · Orçamento, capex e reporting analítico."/>
 <meta property="og:type" content="profile"/>
+<meta name="theme-color" content="#111110"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "David Dionísio Coelho",
+  "jobTitle": "Mestrando em Economia — Financial Track",
+  "description": "Mestrando em Economia (Financial Track, FEUC) com 8 anos de experiência em gestão e controlo operacional: orçamento, capex, controlo de desvios e reporting analítico.",
+  "email": "mailto:davidcoelho.dc@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Coimbra", "addressCountry": "PT" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Faculdade de Economia da Universidade de Coimbra" },
+    { "@type": "CollegeOrUniversity", "name": "Instituto Miguel Torga" }
+  ],
+  "knowsLanguage": ["pt", "en", "es"],
+  "knowsAbout": ["Controlo de Gestão", "Controlo Orçamental", "Análise de Desvios", "Finanças Empresariais", "Business Intelligence", "Power BI", "Excel", "R", "Python", "Stata"],
+  "sameAs": ["https://www.linkedin.com/in/david-d-coelho/"]
+}
+</script>
 <link rel="icon" type="image/svg+xml" href="uploads/favicon/favicon.svg"/>
 <link rel="icon" type="image/png" sizes="32x32" href="uploads/favicon/favicon-32x32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="uploads/favicon/favicon-16x16.png"/>
 <link rel="apple-touch-icon" sizes="180x180" href="uploads/favicon/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://unpkg.com" crossorigin/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
+    color-scheme: light dark;
     --bg: #f8f8f6;
     --panel: #ffffff;
     --border: #e4e4e0;
     --text: #111110;
-    --muted: #888884;
-    --accent: #2351d4;
-    --accent-light: #eef1fc;
+    --text-2: #4d4d4a;
+    --muted: #6b6b67;
+    --accent: #1a6b47;
+    --accent-light: #e8f2ec;
+    --accent-border: #bcd8c8;
+    --on-accent: #ffffff;
+    --sidebar-bg: #111110;
+    --overlay: rgba(0,0,0,0.6);
     --sidebar-w: 300px;
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'Space Grotesk', sans-serif;
     --font-mono: 'Space Mono', monospace;
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121211;
+      --panel: #1b1b1a;
+      --border: #2e2e2c;
+      --text: #ecece8;
+      --text-2: #c4c4bf;
+      --muted: #9d9d98;
+      --accent: #5cc093;
+      --accent-light: #1d2e25;
+      --accent-border: #2f5441;
+      --on-accent: #0b1f15;
+      --sidebar-bg: #0b0b0a;
+      --overlay: rgba(0,0,0,0.75);
+    }
+    .hero-photo { filter: none; }
+    .sidebar { border-right: 1px solid var(--border); }
+  }
+
   html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  /* KEYBOARD FOCUS */
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+  .skip-link {
+    position: absolute; left: 12px; top: -48px; z-index: 400;
+    background: var(--accent); color: var(--on-accent);
+    padding: 10px 16px; border-radius: 5px; font-size: 13px; font-weight: 600; text-decoration: none;
+  }
+  .skip-link:focus { top: 12px; }
   body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; }
 
   /* SIDEBAR */
@@ -44,7 +102,7 @@
     top: 0; left: 0;
     width: var(--sidebar-w);
     height: 100vh;
-    background: var(--text);
+    background: var(--sidebar-bg);
     color: #f8f8f6;
     display: flex;
     flex-direction: column;
@@ -81,7 +139,7 @@
     font-size: 10px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #555552;
+    color: #8a8a86;
     font-weight: 600;
     margin-bottom: 12px;
   }
@@ -91,7 +149,7 @@
     align-items: center;
     gap: 10px;
     padding: 9px 0;
-    color: #9a9a96;
+    color: #b4b4af;
     font-size: 13px;
     font-weight: 400;
     cursor: pointer;
@@ -103,7 +161,7 @@
   .nav-link .dot {
     width: 5px; height: 5px;
     border-radius: 50%;
-    background: #333330;
+    background: #4a4a47;
     transition: background 0.15s;
     flex-shrink: 0;
   }
@@ -117,13 +175,13 @@
 
   .contact-item {
     font-size: 11px;
-    color: #666663;
+    color: #b4b4af;
     margin-bottom: 10px;
     line-height: 1.4;
   }
-  .contact-item a { color: #888884; text-decoration: none; }
+  .contact-item a { color: #b4b4af; text-decoration: none; }
   .contact-item a:hover { color: #f8f8f6; }
-  .contact-label { color: #444441; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
+  .contact-label { color: #8a8a86; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
 
   .lang-toggle {
     display: flex;
@@ -143,12 +201,12 @@
     cursor: pointer;
     border: none;
     background: transparent;
-    color: #555552;
+    color: #9a9a96;
     transition: all 0.2s;
   }
   .lang-btn.active {
     background: var(--accent);
-    color: #fff;
+    color: var(--on-accent);
   }
 
   /* MAIN CONTENT */
@@ -212,7 +270,7 @@
   .btn-primary {
     padding: 12px 24px;
     background: var(--accent);
-    color: white;
+    color: var(--on-accent);
     border: none;
     border-radius: 5px;
     font-family: var(--font-body);
@@ -313,12 +371,7 @@
   .tag.accent {
     background: var(--accent-light);
     color: var(--accent);
-    border-color: #c5cdf0;
-  }
-  .tag.dev {
-    background: #fef9ec;
-    color: #92620a;
-    border-color: #f0dfa0;
+    border-color: var(--accent-border);
   }
 
   /* EXPERIENCE */
@@ -360,7 +413,7 @@
   }
   .exp-bullets li {
     font-size: 12.5px;
-    color: #555552;
+    color: var(--text-2);
     line-height: 1.65;
     padding-left: 14px;
     position: relative;
@@ -398,7 +451,7 @@
   }
   .edu-details {
     font-size: 12px;
-    color: #777773;
+    color: var(--muted);
     line-height: 1.6;
   }
 
@@ -434,7 +487,7 @@
   .lang-badge.native {
     background: var(--accent-light);
     color: var(--accent);
-    border-color: #c5cdf0;
+    border-color: var(--accent-border);
   }
 
   /* CERT */
@@ -524,7 +577,7 @@
   }
   .proj-desc {
     font-size: 12.5px;
-    color: #555552;
+    color: var(--text-2);
     line-height: 1.65;
   }
   .proj-cta {
@@ -547,7 +600,7 @@
   /* CONTACT MODAL */
   .modal-overlay {
     position: fixed; inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: var(--overlay);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
@@ -611,40 +664,6 @@
   .form-success-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 8px; }
   .form-success-text { font-size: 13px; color: var(--muted); }
 
-  /* TWEAKS PANEL */
-  .tweaks-panel {
-    position: fixed;
-    bottom: 24px; right: 24px;
-    background: var(--text);
-    color: #f8f8f6;
-    border-radius: 10px;
-    padding: 20px 24px;
-    width: 240px;
-    z-index: 300;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    animation: slideUp 0.2s ease;
-  }
-  @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-  .tweaks-title {
-    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-    font-weight: 700; margin-bottom: 16px; color: #777772;
-  }
-  .tweak-row { margin-bottom: 14px; }
-  .tweak-label { font-size: 11px; color: #888884; margin-bottom: 6px; }
-  .tweak-options { display: flex; gap: 6px; flex-wrap: wrap; }
-  .tweak-opt {
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 11px;
-    cursor: pointer;
-    border: 1px solid #2a2a28;
-    background: transparent;
-    color: #888884;
-    font-family: var(--font-mono);
-    transition: all 0.15s;
-  }
-  .tweak-opt.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-
   @media (max-width: 900px) {
     :root { --sidebar-w: 0px; }
     .sidebar {
@@ -684,7 +703,7 @@
       top: 0; left: 0; right: 0;
       height: 56px;
       padding: 0 16px;
-      background: var(--text);
+      background: var(--sidebar-bg);
       z-index: 140;
     }
     .mobile-menu-btn {
@@ -732,17 +751,11 @@
 <div id="root"></div>
 <script type="text/babel">
 
-const { useState, useEffect, useRef } = React;
-
-const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "accentColor": "#1a6b47",
-  "fontSize": "normal",
-  "sidebarTheme": "dark"
-} /*EDITMODE-END*/;
+const { useState, useEffect } = React;
 
 const content = {
   PT: {
-    eyebrow: "Disponível para novas oportunidades",
+    eyebrow: "Disponível para funções em controlo de gestão, FP&A e análise financeira",
     headline: "David Dionísio\nCoelho",
     bio: "Mestrando em Economia — Financial Track (FEUC), com 8 anos de experiência em gestão e controlo operacional. Trabalhei com orçamento, capex, controlo mensal de desvios e reporting analítico para a gestão em organizações de média dimensão.\n\nAtualmente a desenvolver a dissertação de mestrado sobre o Impacto da Inovação e do Investimento em I&D no Desempenho Financeiro: Evidência de Empresas Portuguesas.",
     downloadBtn: "Descarregar CV",
@@ -874,7 +887,7 @@ const content = {
     successMsg: { title: "Quase lá!", text: "A mensagem foi aberta no seu cliente de email. Basta clicar em enviar. Se nada abriu, escreva para davidcoelho.dc@gmail.com." }
   },
   EN: {
-    eyebrow: "Open to new opportunities",
+    eyebrow: "Open to roles in management control, FP&A and financial analysis",
     headline: "David Dionísio\nCoelho",
     bio: "Master's Student in Economics — Financial Track (FEUC) with 8 years of experience in operational management and control. I have worked with budget, capex, monthly variance control, and analytical reporting for management in medium-sized organizations.\n\nCurrently developing a Master's thesis on the Impact of Innovation and R&D Investment on Financial Performance: Evidence from Portuguese Firms.",
     downloadBtn: "Download CV",
@@ -1030,9 +1043,6 @@ function App() {
   const [submitted, setSubmitted] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [tweaks, setTweaks] = useState(TWEAK_DEFAULTS);
-  const [showTweaks, setShowTweaks] = useState(false);
-  const sectionRefs = useRef([]);
   const c = content[lang];
 
   useEffect(() => {
@@ -1041,28 +1051,12 @@ function App() {
   }, [lang]);
 
   useEffect(() => {
-    const root = document.documentElement;
-    root.style.setProperty('--accent', tweaks.accentColor);
-    root.style.setProperty('--accent-light', tweaks.accentColor + '18');
-    const fs = tweaks.fontSize === 'large' ? '1.08' : tweaks.fontSize === 'small' ? '0.93' : '1';
-    root.style.fontSize = fs + 'rem';
-  }, [tweaks]);
-
-  useEffect(() => {
-    const handler = (e) => {
-      if (e.data?.type === '__activate_edit_mode') setShowTweaks(true);
-      if (e.data?.type === '__deactivate_edit_mode') setShowTweaks(false);
+    const onKey = (e) => {
+      if (e.key === 'Escape') { setShowModal(false); setSidebarOpen(false); }
     };
-    window.addEventListener('message', handler);
-    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
-    return () => window.removeEventListener('message', handler);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
   }, []);
-
-  const updateTweak = (key, val) => {
-    const next = { ...tweaks, [key]: val };
-    setTweaks(next);
-    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: next }, '*');
-  };
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
@@ -1094,36 +1088,41 @@ function App() {
 
   return (
     <>
+      <a className="skip-link" href="#main">{lang === 'PT' ? 'Saltar para o conteúdo' : 'Skip to content'}</a>
+
       {/* MOBILE TOPBAR */}
       <div className="mobile-topbar">
-        <button className="mobile-menu-btn" onClick={() => setSidebarOpen(true)} aria-label="Menu">☰</button>
+        <button className="mobile-menu-btn" onClick={() => setSidebarOpen(true)} aria-label={lang === 'PT' ? 'Abrir menu' : 'Open menu'} aria-expanded={sidebarOpen} aria-controls="sidebar">☰</button>
         <span className="mobile-topbar-name">David Dionísio Coelho</span>
-        <div className="lang-toggle mobile-lang-toggle">
-          <button className={`lang-btn ${lang === 'PT' ? 'active' : ''}`} onClick={() => setLang('PT')}>PT</button>
-          <button className={`lang-btn ${lang === 'EN' ? 'active' : ''}`} onClick={() => setLang('EN')}>EN</button>
+        <div className="lang-toggle mobile-lang-toggle" role="group" aria-label={lang === 'PT' ? 'Idioma' : 'Language'}>
+          <button className={`lang-btn ${lang === 'PT' ? 'active' : ''}`} aria-pressed={lang === 'PT'} lang="pt" aria-label="Português" onClick={() => setLang('PT')}>PT</button>
+          <button className={`lang-btn ${lang === 'EN' ? 'active' : ''}`} aria-pressed={lang === 'EN'} lang="en" aria-label="English" onClick={() => setLang('EN')}>EN</button>
         </div>
       </div>
 
       {/* SIDEBAR */}
       {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
-      <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
-        <button className="sidebar-close" onClick={() => setSidebarOpen(false)} aria-label="Close menu">×</button>
+      <aside id="sidebar" className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <button className="sidebar-close" onClick={() => setSidebarOpen(false)} aria-label={lang === 'PT' ? 'Fechar menu' : 'Close menu'}>×</button>
         <div className="sidebar-name">David Dionísio Coelho</div>
         <div className="sidebar-title" style={{ whiteSpace: 'pre-line' }}>
           {lang === 'PT' ? 'Mestrando em Economia\nFinancial Track · FEUC' : 'MSc Student in Economics\nFinancial Track · FEUC'}
         </div>
-        <div className="lang-toggle" style={{marginBottom:'28px', marginTop:'-8px'}}>
-          <button className={`lang-btn ${lang === 'PT' ? 'active' : ''}`} onClick={() => setLang('PT')}>PT</button>
-          <button className={`lang-btn ${lang === 'EN' ? 'active' : ''}`} onClick={() => setLang('EN')}>EN</button>
+        <div className="lang-toggle" role="group" aria-label={lang === 'PT' ? 'Idioma' : 'Language'} style={{marginBottom:'28px', marginTop:'-8px'}}>
+          <button className={`lang-btn ${lang === 'PT' ? 'active' : ''}`} aria-pressed={lang === 'PT'} lang="pt" aria-label="Português" onClick={() => setLang('PT')}>PT</button>
+          <button className={`lang-btn ${lang === 'EN' ? 'active' : ''}`} aria-pressed={lang === 'EN'} lang="en" aria-label="English" onClick={() => setLang('EN')}>EN</button>
         </div>
-        <div className="nav-label">{lang === 'PT' ? 'Secções' : 'Sections'}</div>
+        <nav aria-label={lang === 'PT' ? 'Secções' : 'Sections'}>
+        <div className="nav-label" aria-hidden="true">{lang === 'PT' ? 'Secções' : 'Sections'}</div>
         {c.nav.map((label, i) =>
-        <a key={i} className={`nav-link ${activeSection === i ? 'active' : ''}`}
-        onClick={() => {scrollTo(sectionIds[i]);setActiveSection(i);setSidebarOpen(false);}}>
-            <span className="dot" />
+        <a key={i} href={`#${sectionIds[i]}`} className={`nav-link ${activeSection === i ? 'active' : ''}`}
+        aria-current={activeSection === i ? 'true' : undefined}
+        onClick={(e) => {e.preventDefault();scrollTo(sectionIds[i]);setActiveSection(i);setSidebarOpen(false);}}>
+            <span className="dot" aria-hidden="true" />
             {label}
           </a>
         )}
+        </nav>
         <div className="sidebar-contacts">
           <div className="contact-item">
             <div className="contact-label">Email</div>
@@ -1145,17 +1144,17 @@ function App() {
       </aside>
 
       {/* MAIN */}
-      <main className="main">
+      <main id="main" className="main" tabIndex="-1">
         {/* HERO */}
         <section id="profile" className="hero panel" style={{ animationDelay: '0ms' }}>
           <div>
-            <div className="hero-eyebrow">{c.eyebrow}</div>
-            <div className="hero-headline" style={{ whiteSpace: 'pre-line' }}>{c.headline}</div>
+            <p className="hero-eyebrow">{c.eyebrow}</p>
+            <h1 className="hero-headline" style={{ whiteSpace: 'pre-line' }}>{c.headline}</h1>
             <div className="print-contacts">(+351) 935 891 401 · davidcoelho.dc@gmail.com · linkedin.com/in/david-d-coelho · Coimbra, Portugal</div>
             <div className="hero-bio" style={{ whiteSpace: 'pre-line' }}>{c.bio}</div>
           </div>
           <div className="hero-actions">
-            <img className="hero-photo" src="uploads/eu_cropped.png" alt="David Dionísio Coelho" style={{ width: "120px", margin: "0px", objectFit: "cover" }} />
+            <img className="hero-photo" src="uploads/eu_cropped.png" alt={lang === 'PT' ? 'Fotografia de David Dionísio Coelho' : 'Photo of David Dionísio Coelho'} width="120" height="140" />
             <button className="btn-primary" onClick={handleDownload}>↓ {c.downloadBtn}</button>
             <button className="btn-secondary" onClick={() => {setShowModal(true);setSubmitted(false);}}>{c.contactBtn}</button>
           </div>
@@ -1309,32 +1308,32 @@ function App() {
       {/* CONTACT MODAL */}
       {showModal &&
       <div className="modal-overlay" onClick={(e) => e.target === e.currentTarget && setShowModal(false)}>
-          <div className="modal">
-            <button className="modal-close" onClick={() => setShowModal(false)}>×</button>
+          <div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button className="modal-close" onClick={() => setShowModal(false)} aria-label={lang === 'PT' ? 'Fechar' : 'Close'}>×</button>
             {submitted ?
           <div className="form-success">
                 <div className="form-success-icon">✓</div>
-                <div className="form-success-title">{c.successMsg.title}</div>
+                <div id="modal-title" className="form-success-title">{c.successMsg.title}</div>
                 <div className="form-success-text">{c.successMsg.text}</div>
               </div> :
 
           <>
-                <div className="modal-title">{c.contactTitle}</div>
+                <div id="modal-title" className="modal-title">{c.contactTitle}</div>
                 <div className="modal-sub">{c.contactSub}</div>
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label className="form-label">{c.formLabels.name}</label>
-                    <input className="form-input" required value={formState.name}
+                    <label className="form-label" htmlFor="f-name">{c.formLabels.name}</label>
+                    <input id="f-name" className="form-input" autoFocus autoComplete="name" required value={formState.name}
                 onChange={(e) => setFormState({ ...formState, name: e.target.value })} />
                   </div>
                   <div className="form-group">
-                    <label className="form-label">{c.formLabels.email}</label>
-                    <input className="form-input" type="email" required value={formState.email}
+                    <label className="form-label" htmlFor="f-email">{c.formLabels.email}</label>
+                    <input id="f-email" className="form-input" type="email" autoComplete="email" required value={formState.email}
                 onChange={(e) => setFormState({ ...formState, email: e.target.value })} />
                   </div>
                   <div className="form-group">
-                    <label className="form-label">{c.formLabels.message}</label>
-                    <textarea className="form-textarea" required value={formState.message}
+                    <label className="form-label" htmlFor="f-message">{c.formLabels.message}</label>
+                    <textarea id="f-message" className="form-textarea" required value={formState.message}
                 onChange={(e) => setFormState({ ...formState, message: e.target.value })} />
                   </div>
                   <button type="submit" className="btn-primary" style={{ width: '100%', padding: '13px' }}>
@@ -1347,39 +1346,10 @@ function App() {
         </div>
       }
 
-      {/* TWEAKS */}
-      {showTweaks &&
-      <div className="tweaks-panel">
-          <div className="tweaks-title">Tweaks</div>
-          <div className="tweak-row">
-            <div className="tweak-label">Cor de destaque</div>
-            <div className="tweak-options">
-              {[
-            { label: 'Azul', val: '#2351d4' },
-            { label: 'Índigo', val: '#5c3ec7' },
-            { label: 'Verde', val: '#1a6b47' },
-            { label: 'Cinza', val: '#444441' }].
-            map((opt) =>
-            <button key={opt.val} className={`tweak-opt ${tweaks.accentColor === opt.val ? 'active' : ''}`}
-            onClick={() => updateTweak('accentColor', opt.val)}>{opt.label}</button>
-            )}
-            </div>
-          </div>
-          <div className="tweak-row">
-            <div className="tweak-label">Tamanho do texto</div>
-            <div className="tweak-options">
-              {['small', 'normal', 'large'].map((s) =>
-            <button key={s} className={`tweak-opt ${tweaks.fontSize === s ? 'active' : ''}`}
-            onClick={() => updateTweak('fontSize', s)}>{s}</button>
-            )}
-            </div>
-          </div>
-        </div>
-      }
-
       <style>{`
         @media print {
-          .sidebar, .hero-actions, .tweaks-panel, .mobile-topbar { display: none !important; }
+          :root { --bg: #fff; --panel: #fff; --border: #ddd; --text: #111110; --text-2: #4d4d4a; --muted: #6b6b67; --accent: #1a6b47; --accent-light: #e8f2ec; --accent-border: #bcd8c8; }
+          .sidebar, .hero-actions, .mobile-topbar, .skip-link { display: none !important; }
           .print-contacts { display: block !important; font-size: 12px; margin-bottom: 12px; color: #444; }
           .main { margin-left: 0 !important; padding: 20px !important; }
           .panel { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
